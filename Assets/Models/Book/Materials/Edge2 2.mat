@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material.006
+  m_Name: Edge2 2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 7fc51618475f1804faa2fab0d45d7c36, type: 2}
+  m_Parent: {fileID: 2100000, guid: 6b61f04b1be81d941af3276d27d5db73, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,10 +23,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00fac551331ad674ab0bf5c979b65d23, type: 3}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0.492, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b0b57945ed1b8a64683c0e76c5e85d78, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.492, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors: []
