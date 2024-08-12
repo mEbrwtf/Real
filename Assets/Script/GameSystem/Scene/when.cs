@@ -13,7 +13,7 @@ public class when : MonoBehaviour
     private IEnumerator DelayedAction()
     {
         // Wait for 8 seconds
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(57f);
         Debug.Log("Action executed after delay!");
         SceneManager.LoadScene("Scene 1");
     }
