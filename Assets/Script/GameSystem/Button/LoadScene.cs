@@ -12,6 +12,18 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1f; // Ensure the game is running at normal speed
     }
+    void ResumeAllAudio()
+    {
+        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audioSource in allAudioSources)
+        {
+            if (audioSource.time > 0f) // If it was paused
+            {
+                audioSource.UnPause();
+            }
+        }
+    }
+
     public void LoadScene(int index)
     {
         StartCoroutine(LoadScene_Coroutine(index));
