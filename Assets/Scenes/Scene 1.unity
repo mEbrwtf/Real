@@ -21892,7 +21892,7 @@ GameObject:
   - component: {fileID: 716387780}
   - component: {fileID: 716387779}
   m_Layer: 0
-  m_Name: PauseGame
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33425,6 +33425,7 @@ GameObject:
   - component: {fileID: 929713017}
   - component: {fileID: 929713019}
   - component: {fileID: 929713018}
+  - component: {fileID: 929713020}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -33441,7 +33442,7 @@ Transform:
   m_GameObject: {fileID: 929713015}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8045397, y: -2.365272, z: 11.158391}
+  m_LocalPosition: {x: 0.8045397, y: -0.22, z: 2.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33467,8 +33468,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
-  MaxDistance: 15
+  MinDistance: 1
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -33578,6 +33579,18 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &929713020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929713015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2657b546cd10f48cabdbb5ac98f31628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &934103599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36154,6 +36167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114567288}
   - component: {fileID: 1114567289}
+  - component: {fileID: 1114567290}
   m_Layer: 0
   m_Name: 406244__stubb__telephone_pick-up_near_mono
   m_TagString: Untagged
@@ -36272,6 +36286,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1114567290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114567287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2657b546cd10f48cabdbb5ac98f31628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118623496
 GameObject:
   m_ObjectHideFlags: 0
@@ -56650,6 +56676,7 @@ GameObject:
   - component: {fileID: 1557671622}
   - component: {fileID: 1557671621}
   - component: {fileID: 1557671620}
+  - component: {fileID: 1557671623}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -56666,7 +56693,7 @@ Transform:
   m_GameObject: {fileID: 1557671618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8045397, y: -2.365272, z: 11.158391}
+  m_LocalPosition: {x: 0.8045397, y: -0.223, z: 2.428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56727,8 +56754,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
-  MaxDistance: 15
+  MinDistance: 1
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -56803,6 +56830,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1557671623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557671618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2657b546cd10f48cabdbb5ac98f31628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1559593900
 GameObject:
   m_ObjectHideFlags: 0
@@ -91329,8 +91368,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
-  MaxDistance: 15
+  MinDistance: 1
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
