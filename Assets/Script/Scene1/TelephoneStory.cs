@@ -8,9 +8,13 @@ public class TelephoneStory : MonoBehaviour
     public AudioSource PickUp;
     public AudioSource BossCall;
     public bool inReach = false;
+    public AudioSource one;
+    public Collider collision;
     // Start is called before the first frame update
     void Start()
     {
+        collision.enabled = false;
+        Debug.Log("TriggerUneable");
         ring = GetComponent<AudioSource>();
         ring.Play();
         Debug.Log("ringing");
@@ -50,6 +54,9 @@ public class TelephoneStory : MonoBehaviour
         // Wait for 0.8 seconds
         yield return new WaitForSeconds(1f);
         BossCall.Play();
+        yield return new WaitForSeconds(22f);
+        Debug.Log("It's been 22s");
+        collision.enabled = true;
+        Debug.Log("Trigger enabled");
     }
-
 }
