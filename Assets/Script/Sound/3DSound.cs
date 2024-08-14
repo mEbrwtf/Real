@@ -14,13 +14,10 @@ public class Audio3DManager : MonoBehaviour
         audioSource.spatialBlend = 1.0f;
 
         // Set minimum and maximum distance
-        audioSource.minDistance = 1.0f;
-        audioSource.maxDistance = 500.0f;
+        audioSource.minDistance = 5.0f;
+        audioSource.maxDistance = 100.0f;
 
         // Optional: Adjust Doppler level
         audioSource.dopplerLevel = 1.0f;
-
-        // Play the sound
-        audioSource.Play();
     }
 }
