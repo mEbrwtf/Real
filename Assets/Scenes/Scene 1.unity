@@ -242,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   two: {fileID: 625578109}
   triggerCollider: {fileID: 576200}
+  NewtriggerCollider: {fileID: 2072018493}
 --- !u!1001 &1349890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89668,12 +89669,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2072018491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3029bff1336e045ee9fe18aafcc04514, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ac943a7193674e86b1a00a59984d169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerCollider: {fileID: 2072018493}
-  NewTriggerCollider: {fileID: 919132148371176261}
   two: {fileID: 146178990}
+  triggerCollider: {fileID: 2072018493}
+  NewtriggerCollider: {fileID: 919132148371176261}
 --- !u!1 &2076376660
 GameObject:
   m_ObjectHideFlags: 0
@@ -93155,7 +93156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: S a y  g o o d b y e
+  m_Text: Say goodbye
 --- !u!33 &4903110368359010337
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93791,7 +93792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &6795231972018889807
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94034,7 +94035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: R e s u m e  t h e  p u r s u i t
+  m_Text: Resume the pursuit
 --- !u!224 &7286424764784319230
 RectTransform:
   m_ObjectHideFlags: 0

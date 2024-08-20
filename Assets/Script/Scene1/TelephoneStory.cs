@@ -14,7 +14,6 @@ public class TelephoneStory : MonoBehaviour
     void Start()
     {
         collision.enabled = false;
-        Debug.Log("TriggerUneable");
         ring = GetComponent<AudioSource>();
         ring.Play();
         Debug.Log("ringing");
