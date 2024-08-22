@@ -15009,6 +15009,7 @@ GameObject:
   - component: {fileID: 594763917}
   - component: {fileID: 594763916}
   - component: {fileID: 594763920}
+  - component: {fileID: 594763921}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
@@ -15116,6 +15117,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1947358390}
   triggerCollider: {fileID: 594763916}
+--- !u!114 &594763921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594763915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4605b1c93ff48d4af361c995ad6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &598832793
 PrefabInstance:
   m_ObjectHideFlags: 0
