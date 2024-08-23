@@ -13,18 +13,18 @@ public class TriggerPlatForm : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        /*if (other.CompareTag("Player"))
         {
             Debug.Log("Player Inside");
             platForm.canMove = true;
-        }
+        }*/
     }
     void Update()
     {
-        //if (Input.GetButtonDown("Use"))
-        //{
-        //platForm.canMove = true;
-        //}
+        if (Input.GetButtonDown("Use"))
+        {
+            platForm.canMove = true;
+        }
 
 
     }
