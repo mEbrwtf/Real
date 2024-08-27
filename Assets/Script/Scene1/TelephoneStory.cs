@@ -12,10 +12,12 @@ public class TelephoneStory : MonoBehaviour
     public AudioSource one;
     public GameObject collision;
     public GameObject script;
+    public Animator door;
 
     // Start is called before the first frame update
     void Start()
     {
+        door.enabled = false;
         collision.SetActive(false);
         ring = GetComponent<AudioSource>();
         ring.Play();
@@ -71,6 +73,8 @@ public class TelephoneStory : MonoBehaviour
         Debug.Log("It's been 22s");
         collision.SetActive(true);
         Debug.Log("Trigger enabled");
+        door.enabled = true;
+
     }
 }
 
