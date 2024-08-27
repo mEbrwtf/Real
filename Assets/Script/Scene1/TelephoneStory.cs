@@ -11,6 +11,7 @@ public class TelephoneStory : MonoBehaviour
     public bool inReach = false;
     public AudioSource one;
     public GameObject collision;
+    public GameObject script;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,8 @@ public class TelephoneStory : MonoBehaviour
         ring = GetComponent<AudioSource>();
         ring.Play();
         Debug.Log("ringing");
+        script.SetActive(true);
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Reach")
@@ -52,16 +53,17 @@ public class TelephoneStory : MonoBehaviour
         ring.Stop();
         Debug.Log("Hanging out");
         PickUp.Play();
-        
+
         // Disable the collider to prevent further interaction
         Phone.enabled = false;
         inReach = false;
-        
+        script.SetActive(false);
+
         StartCoroutine(DelayedAction());
     }
-
     private IEnumerator DelayedAction()
     {
+
         // Wait for 0.8 seconds
         yield return new WaitForSeconds(1f);
         BossCall.Play();
