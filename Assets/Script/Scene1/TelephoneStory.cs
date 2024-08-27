@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class TelephoneStory : MonoBehaviour
 {
+    public Collider Phone;
     AudioSource ring;
     public AudioSource PickUp;
     public AudioSource BossCall;
     public bool inReach = false;
     public AudioSource one;
-    public Collider collision;
+    public GameObject collision;
+
     // Start is called before the first frame update
     void Start()
     {
-        collision.enabled = false;
+        collision.SetActive(false);
         ring = GetComponent<AudioSource>();
         ring.Play();
         Debug.Log("ringing");
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Reach")
@@ -26,6 +29,7 @@ public class TelephoneStory : MonoBehaviour
             inReach = true;
         }
     }
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Reach")
@@ -33,6 +37,7 @@ public class TelephoneStory : MonoBehaviour
             inReach = false;
         }
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -41,13 +46,20 @@ public class TelephoneStory : MonoBehaviour
             Answer();
         }
     }
+
     void Answer()
     {
         ring.Stop();
         Debug.Log("Hanging out");
         PickUp.Play();
+        
+        // Disable the collider to prevent further interaction
+        Phone.enabled = false;
+        inReach = false;
+        
         StartCoroutine(DelayedAction());
     }
+
     private IEnumerator DelayedAction()
     {
         // Wait for 0.8 seconds
@@ -55,7 +67,8 @@ public class TelephoneStory : MonoBehaviour
         BossCall.Play();
         yield return new WaitForSeconds(22f);
         Debug.Log("It's been 22s");
-        collision.enabled = true;
+        collision.SetActive(true);
         Debug.Log("Trigger enabled");
     }
 }
+

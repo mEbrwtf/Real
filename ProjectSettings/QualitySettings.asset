@@ -312,7 +312,7 @@ QualitySettings:
     PS5: 5
     Server: 1
     Stadia: 5
-    Standalone: 1
+    Standalone: 4
     WebGL: 1
     Windows Store Apps: 5
     XboxOne: 5
