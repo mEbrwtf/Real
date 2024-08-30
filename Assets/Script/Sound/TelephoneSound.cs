@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TelephoneSound : MonoBehaviour
 {
-    private AudioSource audioSource;
-    private AudioLowPassFilter lowPassFilter;
-    private AudioHighPassFilter highPassFilter;
+    public AudioSource audioSource;
+    public AudioLowPassFilter lowPassFilter;
+    public AudioHighPassFilter highPassFilter;
 
     void Start()
     {
