@@ -15,10 +15,11 @@ public class NotAnswer : MonoBehaviour
 
     public GameObject Tele;
     public AudioSource Hang_up;
+    public GameObject NAStory;
     // Start is called before the first frame update
     void Start()
     {
-
+        NAStory.SetActive(false);
         StartCoroutine(DelayedAction());
     }
     private IEnumerator DelayedAction()
@@ -41,6 +42,8 @@ public class NotAnswer : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Tele.SetActive(false);
         Hang_up.Play();
+        yield return new WaitForSeconds(3f);
+        NAStory.SetActive(true);
     }
     // Update is called once per frame
     void Update()
