@@ -9,10 +9,8 @@ public class NotAnswer : MonoBehaviour
     public GameObject sub1;
     public AudioSource audioSource2;
     public GameObject sub2;
-
     public AudioSource audioSource3;
     public GameObject sub3;
-
     public GameObject Tele;
     public AudioSource Hang_up;
     public GameObject NAStory;

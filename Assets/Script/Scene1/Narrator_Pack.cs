@@ -6,12 +6,14 @@ public class Narrator_Pack : MonoBehaviour
 {
     public AudioSource narrator1;
     public AudioSource narrator2;
+    public GameObject sitting;
 
     // Start is called before the first frame update
     void Start()
     {
         narrator1.Play();
         StartCoroutine(DelayedAction());
+        sitting.SetActive(true);
     }
 
     private IEnumerator DelayedAction()
