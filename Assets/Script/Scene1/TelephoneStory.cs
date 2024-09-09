@@ -13,6 +13,9 @@ public class TelephoneStory : MonoBehaviour
     public GameObject collision;
     public GameObject script;
     public Animator door;
+    public GameObject Natext;
+    public AudioSource NaSound1;
+    public AudioSource NaSound2;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,10 @@ public class TelephoneStory : MonoBehaviour
         Phone.enabled = false;
         inReach = false;
         script.SetActive(false);
+        Natext.SetActive(false);
+        NaSound1.Stop();
+        NaSound2.Stop();
+        
 
         StartCoroutine(DelayedAction());
     }
