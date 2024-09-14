@@ -6,14 +6,14 @@ public class RemoveTrigger : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject currentTrigger;
-    public GameObject nextTrigger;
+    public Collider currentTrigger;
+    public Collider nextTrigger;
     public AudioSource audioSource;
     public AudioSource LastaudioSource;
     void Start()
     {
         audioSource.Stop();
-        nextTrigger.SetActive(false);
+        nextTrigger.enabled = false;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -32,8 +32,8 @@ public class RemoveTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            nextTrigger.SetActive(true);
-            currentTrigger.SetActive(false);
+            nextTrigger.enabled = true;
+            currentTrigger.enabled = false;
         }
     }
 
