@@ -29,7 +29,8 @@ public class two : MonoBehaviour
     }
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(1);
+        Debug.Log("button");
         Button.SetActive(true);
     }
     // Update is called once per frame
