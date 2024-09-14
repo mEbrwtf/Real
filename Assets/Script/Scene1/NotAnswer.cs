@@ -1,51 +1,50 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NotAnswer : MonoBehaviour
 {
-    public AudioSource audioSource1;
-    public GameObject sub1;
-    public AudioSource audioSource2;
-    public GameObject sub2;
-    public AudioSource audioSource3;
-    public GameObject sub3;
+    public AudioSource[] audioSources; // Array for audio sources
+    public GameObject[] subtitles;     // Array for subtitles
     public GameObject Tele;
     public AudioSource Hang_up;
     public GameObject NAStory;
-    // Start is called before the first frame update
+
     void Start()
     {
         NAStory.SetActive(false);
         StartCoroutine(DelayedAction());
     }
+
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(8f);
-        audioSource1.Play();
-        sub1.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        sub1.SetActive(false);
-        yield return new WaitForSeconds(10f);
-        audioSource2.Play();
-        sub2.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        sub2.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        audioSource3.Play();
-        sub3.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        sub3.SetActive(false);
+        // Assuming you want these specific wait times between audio/subtitle pairs
+        float[] waitTimesBefore = { 8f, 10f, 1f }; // Wait times before each audio/subtitle
+        float[] subtitleDurations = { 5f, 3f, 1f }; // Duration each subtitle stays visible
+
+        for (int i = 0; i < audioSources.Length; i++)
+        {
+            yield return new WaitForSeconds(waitTimesBefore[i]);
+            yield return PlayAudioWithSubtitles(audioSources[i], subtitles[i], subtitleDurations[i]);
+        }
+
+        // After all audio/subtitles have played
         yield return new WaitForSeconds(3f);
         Tele.SetActive(false);
         Hang_up.Play();
+
         yield return new WaitForSeconds(3f);
         NAStory.SetActive(true);
     }
-    // Update is called once per frame
+
+    private IEnumerator PlayAudioWithSubtitles(AudioSource audioSource, GameObject subtitle, float displayTime)
+    {
+        audioSource.Play();
+        subtitle.SetActive(true);
+        yield return new WaitForSeconds(displayTime);
+        subtitle.SetActive(false);
+    }
+
     void Update()
     {
-
     }
 }
