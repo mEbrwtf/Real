@@ -3,20 +3,35 @@ using UnityEngine;
 
 public class Two1 : MonoBehaviour
 {
-    public Collider own;
-    public GameObject[] subs;        // Array for Sub, Sub2, Sub3, etc.
-    public AudioSource[] subAudios;  // Corresponding audio sources for each Sub
-    public float[] delays;           // Array of delays before activating each Sub
-    public float[] durations;        // Array of durations for each Sub to remain active
+    [Header("Trigger Settings")]
+    public Collider own; // Reference to the collider
+    public bool deactivateOnExit = true; // Option to deactivate collider when player exits
 
-    private bool isTriggered = false; // Flag to check if the coroutine is already running
+    [Header("Initial Object Settings")]
+    public Animator initialObject; // Animator to control after subs and audios
+    public string activationParameter = "Open"; // Parameter name in Animator
+    public float finalDelay = 2f; // Delay before activating Animator
+
+    [Header("Sub Objects Settings")]
+    public GameObject[] subs; // Array for Sub objects
+    public AudioSource[] subAudios; // Corresponding audio sources for each Sub
+    public float[] delays; // Array of delays before activating each Sub
+    public float[] durations; // Array of durations for each Sub to remain active
+
+    private bool isTriggered = false; // Flag to check if coroutine is running
 
     void Start()
     {
-        // Ensure delays and durations match subs and subAudios length
-        if (subs.Length != subAudios.Length || subs.Length != delays.Length || subs.Length != durations.Length)
+        // Validate the arrays' lengths
+        if (subs.Length > 0 && (subs.Length != subAudios.Length || subs.Length != delays.Length || subs.Length != durations.Length))
         {
-            Debug.LogError("Make sure subs, subAudios, delays, and durations arrays are all of the same length.");
+            Debug.LogError("Ensure all arrays (subs, subAudios, delays, durations) have the same length.");
+        }
+
+        // Ensure Animator is initially inactive
+        if (initialObject != null)
+        {
+            initialObject.enabled = false; // Disable Animator initially
         }
     }
 
@@ -24,55 +39,82 @@ public class Two1 : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isTriggered)
         {
-            Debug.Log("hi");
             isTriggered = true;
-            StartCoroutine(DelayedAction());
+            StartCoroutine(HandleSequence());
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && deactivateOnExit)
         {
-            own.enabled = false; // Disable the collider once the player exits
+            own.enabled = false; // Optionally disable the collider when player exits
         }
     }
 
-    private IEnumerator DelayedAction()
+    private IEnumerator HandleSequence()
     {
+        // Sequentially activate subs and audios
         for (int i = 0; i < subs.Length; i++)
         {
-            yield return new WaitForSeconds(delays[i]);    // Wait before activating the next Sub
-            yield return ActivateSub(i, durations[i]);     // Activate Sub with corresponding duration
+            yield return new WaitForSeconds(delays[i]);
+            yield return ActivateSub(i, durations[i]);
         }
 
-        // If Button is removed, you can remove this logic or add any other logic needed here
-        // Debug.Log("button");
-        // Button.SetActive(true); // Commented out since Button is no longer used
+        // Wait for final delay
+        yield return new WaitForSeconds(finalDelay);
 
-        isTriggered = false; // Reset the flag
+        // Activate Animator
+        if (initialObject != null)
+        {
+            initialObject.enabled = true; // Enable Animator
+            initialObject.SetBool(activationParameter, true); // Set Animator parameter
+        }
+
+        isTriggered = false; // Reset flag
     }
 
     private IEnumerator ActivateSub(int index, float duration)
     {
+        // Activate Sub object
         if (index < subs.Length && subs[index] != null)
         {
-            subs[index].SetActive(true);    // Activate the Sub
-        }
-        else
-        {
-            Debug.LogWarning($"Subtitle GameObject at index {index} is not assigned.");
+            subs[index].SetActive(true);
         }
 
+        // Play corresponding audio
         if (index < subAudios.Length && subAudios[index] != null)
         {
-            subAudios[index].Play();   // Play the corresponding audio if it exists
+            subAudios[index].Play();
         }
 
-        yield return new WaitForSeconds(duration);         // Wait for the specified duration
+        // Wait for specified duration
+        yield return new WaitForSeconds(duration);
 
+        // Deactivate Sub object
         if (index < subs.Length && subs[index] != null)
         {
-            subs[index].SetActive(false);   // Deactivate the Sub
+            subs[index].SetActive(false);
+        }
+    }
+
+    // Public method to reset the script's logic
+    public void ResetTrigger()
+    {
+        isTriggered = false;
+        own.enabled = true;
+
+        // Reset Animator parameter and state
+        if (initialObject != null)
+        {
+            initialObject.enabled = false; // Disable Animator
+            initialObject.SetBool(activationParameter, false);
+        }
+
+        // Deactivate all subs
+        foreach (var sub in subs)
+        {
+            if (sub != null) sub.SetActive(false);
         }
     }
 }
