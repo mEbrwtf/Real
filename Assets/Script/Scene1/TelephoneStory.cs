@@ -75,7 +75,7 @@ public class TelephoneStory : MonoBehaviour
         // Wait for 0.8 seconds
         yield return new WaitForSeconds(1f);
         BossCall.Play();
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(2f);
         Debug.Log("It's been 22s");
         collision.SetActive(true);
         Debug.Log("Trigger enabled");

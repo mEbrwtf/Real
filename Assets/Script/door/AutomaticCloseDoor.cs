@@ -6,6 +6,7 @@ public class AutomaticCloseDoor : MonoBehaviour
 {
     public Animator door;
     public Collider triggerCollider;
+    public GameObject Previous;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class AutomaticCloseDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             door.SetBool("Close", true);
+            Previous.SetActive(false);
         }
     }
 
