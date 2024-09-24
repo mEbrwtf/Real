@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerPlatForm : MonoBehaviour
 {
-
+    public AudioSource elevator;
     MoveingPlatForm platForm;
     private void Start()
     {
@@ -24,6 +24,7 @@ public class TriggerPlatForm : MonoBehaviour
         if (Input.GetButtonDown("Use"))
         {
             platForm.canMove = true;
+            elevator.Play();
         }
 
 
