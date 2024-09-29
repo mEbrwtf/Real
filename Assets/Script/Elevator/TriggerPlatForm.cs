@@ -6,6 +6,8 @@ public class TriggerPlatForm : MonoBehaviour
 {
     public AudioSource elevator;
     MoveingPlatForm platForm;
+    public Animator LeftDoor;
+    public Animator RightDoor;
     private void Start()
     {
         platForm = GetComponent<MoveingPlatForm>();
@@ -25,8 +27,14 @@ public class TriggerPlatForm : MonoBehaviour
         {
             platForm.canMove = true;
             elevator.Play();
+            EDclose();
         }
-
-
+    }
+    public void EDclose()
+    {
+        LeftDoor.SetBool("Close", true);
+        LeftDoor.SetBool("Open", false);
+        RightDoor.SetBool("Close", true);
+        RightDoor.SetBool("Open", false);
     }
 }
