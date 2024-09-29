@@ -4,37 +4,97 @@ using UnityEngine;
 
 public class TriggerPlatForm : MonoBehaviour
 {
+    bool inReach;
     public AudioSource elevator;
+    public GameObject platformObject; // Reference to the GameObject that contains MoveingPlatForm
     MoveingPlatForm platForm;
     public Animator LeftDoor;
     public Animator RightDoor;
-    private void Start()
+    public float delayBeforeMoving = 2f; // Exposed delay variable for flexibility
+
+    void Start()
     {
-        platForm = GetComponent<MoveingPlatForm>();
+        if (platformObject != null)
+        {
+            platForm = platformObject.GetComponent<MoveingPlatForm>();
+            if (platForm == null)
+            {
+                Debug.LogError("MoveingPlatForm component is missing on the assigned GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Platform Object not assigned in the inspector!");
+        }
+
+        if (elevator == null)
+        {
+            Debug.LogError("AudioSource for elevator is missing!");
+        }
+        
+        inReach = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        /*if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Reach"))
         {
-            Debug.Log("Player Inside");
-            platForm.canMove = true;
-        }*/
-    }
-    void Update()
-    {
-        if (Input.GetButtonDown("Use"))
-        {
-            platForm.canMove = true;
-            elevator.Play();
-            EDclose();
+            Debug.Log("In Reach");
+            inReach = true;
         }
     }
-    public void EDclose()
+    
+    public void OnTriggerExit(Collider other)
     {
-        LeftDoor.SetBool("Close", true);
-        LeftDoor.SetBool("Open", false);
-        RightDoor.SetBool("Close", true);
-        RightDoor.SetBool("Open", false);
+        if (other.gameObject.CompareTag("Reach"))
+        {
+            inReach = false;
+        }
+    }
+
+    void Update()
+    {
+        if (inReach && Input.GetButtonDown("Click"))
+        {
+            EDClose();
+            StartCoroutine(DelayedAction());
+        }
+    }
+
+    private IEnumerator DelayedAction()
+    {
+        Debug.Log("Starting delayed elevator movement.");
+        yield return new WaitForSeconds(delayBeforeMoving);
+
+        if (platForm != null)
+        {
+            platForm.canMove = true;
+        }
+        else
+        {
+            Debug.LogError("MoveingPlatForm reference is null!");
+        }
+
+        if (elevator != null)
+        {
+            elevator.Play();
+        }
+
+        Debug.Log("Elevator should start moving.");
+    }
+
+    void EDClose()
+    {
+        if (LeftDoor != null && RightDoor != null)
+        {
+            LeftDoor.SetBool("Close", true);
+            LeftDoor.SetBool("Open", false);
+            RightDoor.SetBool("Close", true);
+            RightDoor.SetBool("Open", false);
+        }
+        else
+        {
+            Debug.LogError("Animators for doors are missing!");
+        }
     }
 }

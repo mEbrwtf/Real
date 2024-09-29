@@ -35,10 +35,7 @@ public class ElevatorDoor : MonoBehaviour
         if (inReach && Input.GetButtonDown("Click"))
         {
             EDopen();
-        }
-        else
-        {
-            EDclose();
+            StartCoroutine(DelayedAction());
         }
     }
     public void EDopen()
@@ -54,5 +51,10 @@ public class ElevatorDoor : MonoBehaviour
         LeftDoor.SetBool("Open", false);
         RightDoor.SetBool("Close", true);
         RightDoor.SetBool("Open", false);
+    }
+    private IEnumerator DelayedAction()
+    {
+        yield return new WaitForSeconds(6f);
+        EDclose();
     }
 }
