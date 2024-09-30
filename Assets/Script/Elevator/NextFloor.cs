@@ -7,20 +7,16 @@ public class NextFloor : MonoBehaviour
     public Animator LeftDoor;
     public Animator RightDoor;
     public Collider doorTrigger; // To reference the trigger's collider
-    public Collider Button;
     // Start is called before the first frame update
     void Start()
     {
         doorTrigger = GetComponent<Collider>();
-        Button = GetComponent<Collider>();
-        Button.enabled = false;
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Inside");
-            Button.enabled = true;
             StartCoroutine(DelayedOpen());
         }
     }
