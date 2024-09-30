@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerPlatForm : MonoBehaviour
 {
     bool inReach;
-    public AudioSource elevator;
+    //public AudioSource elevator;
     public GameObject platformObject; // Reference to the GameObject that contains MoveingPlatForm
     MoveingPlatForm platForm;
     public Animator LeftDoor;
@@ -27,10 +27,10 @@ public class TriggerPlatForm : MonoBehaviour
             Debug.LogError("Platform Object not assigned in the inspector!");
         }
 
-        if (elevator == null)
+        /*if (elevator == null)
         {
             Debug.LogError("AudioSource for elevator is missing!");
-        }
+        }*/
         
         inReach = false;
     }
@@ -75,10 +75,10 @@ public class TriggerPlatForm : MonoBehaviour
             Debug.LogError("MoveingPlatForm reference is null!");
         }
 
-        if (elevator != null)
+       /*if (elevator != null)
         {
-            elevator.Play();
-        }
+            //elevator.Play();
+        }*/
 
         Debug.Log("Elevator should start moving.");
     }
