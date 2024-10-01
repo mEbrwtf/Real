@@ -11,9 +11,11 @@ public class TriggerPlatForm : MonoBehaviour
     public Animator LeftDoor;
     public Animator RightDoor;
     public float delayBeforeMoving = 2f; // Exposed delay variable for flexibility
-
+    public Collider triggerCollider; // To disable the collider after the audio sequence
+    public GameObject triggerCollider2;
     void Start()
     {
+        triggerCollider = GetComponent<Collider>();
         if (platformObject != null)
         {
             platForm = platformObject.GetComponent<MoveingPlatForm>();
@@ -31,7 +33,7 @@ public class TriggerPlatForm : MonoBehaviour
         {
             Debug.LogError("AudioSource for elevator is missing!");
         }*/
-        
+
         inReach = false;
     }
 
@@ -43,7 +45,6 @@ public class TriggerPlatForm : MonoBehaviour
             inReach = true;
         }
     }
-    
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Reach"))
@@ -56,11 +57,12 @@ public class TriggerPlatForm : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
+            triggerCollider.enabled = true;
+            triggerCollider2.SetActive(false);
             EDClose();
             StartCoroutine(DelayedAction());
         }
     }
-
     private IEnumerator DelayedAction()
     {
         Debug.Log("Starting delayed elevator movement.");
@@ -75,10 +77,10 @@ public class TriggerPlatForm : MonoBehaviour
             Debug.LogError("MoveingPlatForm reference is null!");
         }
 
-       /*if (elevator != null)
-        {
-            //elevator.Play();
-        }*/
+        /*if (elevator != null)
+         {
+             //elevator.Play();
+         }*/
 
         Debug.Log("Elevator should start moving.");
     }
