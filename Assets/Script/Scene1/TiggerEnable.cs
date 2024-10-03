@@ -6,7 +6,7 @@ public class TriggerAudioManager : MonoBehaviour
 {
     public List<AudioSource> audioSources; // List of AudioSources to handle multiple audio clips
     public List<string> subtitles; // List of subtitles corresponding to each audio clip
-    public List<float> delays; // List of delays corresponding to each audio clip
+    public List<float> audioDelays; // List of delays corresponding to each audio clip
     public Collider triggerCollider; // To disable the collider after the audio sequence
     public static TriggerAudioManager activeTrigger; // Tracks the currently active TriggerAudioManager instance
     public int currentAudioIndex = 0; // Tracks the current audio in the list
@@ -66,11 +66,11 @@ public class TriggerAudioManager : MonoBehaviour
         AudioSource currentPlayingAudio = audioSources[currentAudioIndex];
         currentPlayingAudio.Play();
 
-        // Display the corresponding subtitle
+        // Display the corresponding subtitle for the entire audio length
         DisplaySubtitle(currentAudioIndex);
 
-        // Start a coroutine to wait for the audio to finish and play the next one
-        StartCoroutine(PlayNextAudioAfterCurrentEnds());
+        // Start a coroutine to wait for the audio to finish and play the next one with delay
+        StartCoroutine(PlayNextAudioAfterCurrentEnds(currentPlayingAudio.clip.length, audioDelays[currentAudioIndex]));
     }
 
     // Display the subtitle for the current audio index
@@ -82,20 +82,17 @@ public class TriggerAudioManager : MonoBehaviour
         }
     }
 
-    // Coroutine to wait for the audio to finish and then play the next one
-    private System.Collections.IEnumerator PlayNextAudioAfterCurrentEnds()
+    // Coroutine to wait for the audio to finish and then play the next one with delay
+    private System.Collections.IEnumerator PlayNextAudioAfterCurrentEnds(float audioLength, float audioDelay)
     {
         // Wait until the current audio clip is finished
-        yield return new WaitForSeconds(audioSources[currentAudioIndex].clip.length);
+        yield return new WaitForSeconds(audioLength);
 
-        // Get the delay for the next audio from the list
-        float nextDelay = (currentAudioIndex < delays.Count) ? delays[currentAudioIndex] : 0f;
+        // Clear the subtitle text immediately after the audio ends
+        subtitleText.text = ""; // Clear the subtitle text
 
-        // Delay before playing the next audio
-        yield return new WaitForSeconds(nextDelay);
-
-        // Clear the current subtitle
-        subtitleText.text = "";
+        // Wait for the specified delay before moving to the next audio
+        yield return new WaitForSeconds(audioDelay);
 
         // Move to the next audio
         currentAudioIndex++;
