@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // Make sure to include this for UI elements
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class TriggerAudioManager : MonoBehaviour
@@ -10,6 +10,7 @@ public class TriggerAudioManager : MonoBehaviour
     public Collider triggerCollider; // To disable the collider after the audio sequence
     public static TriggerAudioManager activeTrigger; // Tracks the currently active TriggerAudioManager instance
     public int currentAudioIndex = 0; // Tracks the current audio in the list
+    public List<Collider> nextTriggers; // List of next triggers to activate progressively after each clip
 
     [Header("UI Elements")]
     public Text subtitleText; // Reference to the UI Text element for displaying subtitles
@@ -94,6 +95,12 @@ public class TriggerAudioManager : MonoBehaviour
         // Wait for the specified delay before moving to the next audio
         yield return new WaitForSeconds(audioDelay);
 
+        // Activate the next trigger after the current audio
+        if (currentAudioIndex < nextTriggers.Count)
+        {
+            nextTriggers[currentAudioIndex].enabled = true; // Enable the next trigger based on the current index
+        }
+
         // Move to the next audio
         currentAudioIndex++;
 
@@ -103,7 +110,7 @@ public class TriggerAudioManager : MonoBehaviour
         }
         else
         {
-            // Optionally disable the trigger collider here if you want to do so after the last audio
+            // Optionally disable the current trigger collider after all audios are done
             // triggerCollider.enabled = false;
         }
     }
@@ -113,8 +120,8 @@ public class TriggerAudioManager : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Ensure the object is the player
         {
-            // Disable the collider immediately when the player exits
-            triggerCollider.enabled = false; // Disable the trigger collider
+            // Optionally disable the collider immediately when the player exits
+            triggerCollider.enabled = false;
         }
     }
 }
