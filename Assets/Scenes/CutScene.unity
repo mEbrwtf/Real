@@ -1900,7 +1900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &120464009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avgFrameRate: 120
-  display_Text: {fileID: 2128813902}
+  display_Text: {fileID: 0}
 --- !u!4 &120464010
 Transform:
   m_ObjectHideFlags: 0
@@ -2212,7 +2212,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4001,7 +4001,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -5082,7 +5082,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -6066,7 +6066,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -9974,7 +9974,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -18114,7 +18114,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: bcee79914acf84e5c9165a2fb2166a71, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -19828,7 +19828,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -38228,7 +38228,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -55566,7 +55566,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -57858,7 +57858,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -58144,7 +58144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_Texture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -61159,7 +61159,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -61548,7 +61548,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0ad78bc9314c24f3481cd987232136a6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6134c7c2e30014a39b2d1b4a47a3eb6e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
