@@ -3,7 +3,17 @@ guid: 43e6d8a23eafc49b1987ef9546052e28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chopping board LP
+    second: {fileID: 2100000, guid: 2c66e3c878a1c4f1fab3f66a013a952d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Knife rack
+    second: {fileID: 2100000, guid: 9e9479a5de9e2431dac0affdc33dedac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: dee2021b445f84e53910a761f8a8d3d6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frozen_entrees_002_M
+    second: {fileID: 2100000, guid: b86974d7426a74e49b80315c4e6d1a85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
