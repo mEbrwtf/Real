@@ -15,6 +15,9 @@ public class TriggerAudioManager : MonoBehaviour
     [Header("UI Elements")]
     public Text subtitleText; // Reference to the UI Text element for displaying subtitles
 
+    [Header("Audio Start Delay")]
+    public float initialDelay = 1.0f; // Delay before starting the audio sequence
+
     void Start()
     {
         triggerCollider = GetComponent<Collider>(); // Get the trigger collider
@@ -32,8 +35,15 @@ public class TriggerAudioManager : MonoBehaviour
             }
 
             activeTrigger = this; // Set this trigger as the active one
-            PlayAudio(); // Start playing the audio sequence
+            StartCoroutine(StartAudioWithDelay(initialDelay)); // Start the audio sequence with the initial delay
         }
+    }
+
+    // Coroutine to start the audio after the initial delay
+    private System.Collections.IEnumerator StartAudioWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified initial delay
+        PlayAudio(); // Start playing the audio sequence
     }
 
     // Completely reset the audio manager
