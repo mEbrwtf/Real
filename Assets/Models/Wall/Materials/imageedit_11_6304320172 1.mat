@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AffineMapIntensity: 0.029
+    - _AffineMapIntensity: 0.025
     - _DrawDist: 0
     - _Glossiness: 0
     - _VertJitter: 0.95
