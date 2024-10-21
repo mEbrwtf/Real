@@ -10,7 +10,6 @@ public class LightSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Light.SetActive(false);
         inReach = false;
     }
 
@@ -35,24 +34,28 @@ public class LightSwitch : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
+            Light.SetActive(true);
             SwitchOn();
-            Light.SetActive(false);
         }
 
         else
         {
+            Light.SetActive(false);
             SwitchOff();
-            Light.SetActive(true);
         }
-    }
-    void SwitchOn()
-    {
-        switch_.SetBool("on", true);
-        switch_.SetBool("off", false);
-    }
-    void SwitchOff()
-    {
-        switch_.SetBool("off", true);
-        switch_.SetBool("on", false);
+
+        void SwitchOn()
+        {
+            Light.SetActive(true);
+            switch_.SetBool("on", true);
+            switch_.SetBool("off", false);
+        }
+
+        void SwitchOff()
+        {
+            Light.SetActive(false);
+            switch_.SetBool("off", true);
+            switch_.SetBool("on", false);
+        }
     }
 }
