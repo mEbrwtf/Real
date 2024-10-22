@@ -20,18 +20,33 @@ public class MoveOnTrigger : MonoBehaviour
     private bool isMoving = false;
     public bool inReach;
 
+    void Start()
+    {
+        inReach = false;
+    }
     // Unity method for detecting trigger collisions
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // Check if the colliding object is the player (you can use tags or other identifiers)
-        if ((other.gameObject.tag == "Reach(Key)") && !isMoving)
+        if (other.gameObject.tag == "Reach(Key)")
         {
             inReach = true;
-            if (inReach && Input.GetButtonDown("Click"))
-            {
-                // Start the coroutine to delay the movement
-                StartCoroutine(MoveObjectWithDelay());
-            }
+            Debug.Log("inreach");
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Reach(Key)")
+        {
+            inReach = false;
+        }
+    }
+    void Update()
+    {
+        if (inReach && Input.GetButtonDown("Click") && !isMoving)
+        {
+            // Start the coroutine to delay the movement
+            StartCoroutine(MoveObjectWithDelay());
         }
     }
     // Coroutine to handle the delayed movement
