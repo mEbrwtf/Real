@@ -13,6 +13,7 @@ public class TrueEnding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        triggerCollider = GetComponent<Collider>();
         ring.Play();
         inReach = false;
     }
@@ -37,7 +38,6 @@ public class TrueEnding : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
-            triggerCollider.enabled = false;
             ring.Stop();
             pickup.Play();
             end.SetActive(true);

@@ -21987,8 +21987,6 @@ MonoBehaviour:
   LeftDoor: {fileID: 592912340}
   RightDoor: {fileID: 873442419}
   delayBeforeMoving: 2
-  triggerCollider: {fileID: 457721354}
-  triggerCollider2: {fileID: 457721351}
 --- !u!1 &1151825980
 GameObject:
   m_ObjectHideFlags: 0
@@ -40180,23 +40178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSources:
-  - {fileID: 439297683}
   - {fileID: 2106155688}
-  - {fileID: 741109983}
-  - {fileID: 570696548}
-  - {fileID: 1209395871}
-  - {fileID: 900500240}
-  - {fileID: 1846109001}
   subtitles:
   - "Alright, enough with the games. Let\u2019s get serious and finally get things
     done!"
-  - "Uh, how are you planning to clean when you don\u2019t even have a tool?"
-  - I told you from the start to head to the broom closet for a mop!
-  - "If you don\u2019t clean it now, you\u2019re obviously going to get in trouble!"
-  - "I'll give you an offer here\u2014a choice to make."
-  - 'Your choice: head back to grab a mop!'
-  - Or if you spot a button on the wall outside labeled 'Self-Cleaning,' just press
-    it so you won't have to clean it yourself!
   audioDelays:
   - 3
   - 0
@@ -40208,12 +40193,6 @@ MonoBehaviour:
   triggerCollider: {fileID: 2049872142}
   currentAudioIndex: 0
   nextTriggers:
-  - {fileID: 656338443}
-  - {fileID: 656338443}
-  - {fileID: 656338443}
-  - {fileID: 656338443}
-  - {fileID: 656338443}
-  - {fileID: 656338443}
   - {fileID: 1987433353}
   subtitleText: {fileID: 1714085518}
   initialDelay: 1

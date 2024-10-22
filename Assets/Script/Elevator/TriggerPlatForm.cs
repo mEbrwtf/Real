@@ -11,11 +11,11 @@ public class TriggerPlatForm : MonoBehaviour
     public Animator LeftDoor;
     public Animator RightDoor;
     public float delayBeforeMoving = 2f; // Exposed delay variable for flexibility
-    public Collider triggerCollider; // To disable the collider after the audio sequence
-    public GameObject triggerCollider2;
+    //public Collider triggerCollider; // To disable the collider after the audio sequence
+    //public GameObject triggerCollider2;
     void Start()
     {
-        triggerCollider = GetComponent<Collider>();
+        //triggerCollider = GetComponent<Collider>();
         if (platformObject != null)
         {
             platForm = platformObject.GetComponent<MoveingPlatForm>();
@@ -57,8 +57,8 @@ public class TriggerPlatForm : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
-            triggerCollider.enabled = true;
-            triggerCollider2.SetActive(false);
+            //triggerCollider.enabled = true;
+            //triggerCollider2.SetActive(false);
             EDClose();
             StartCoroutine(DelayedAction());
         }
