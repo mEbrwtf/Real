@@ -9,16 +9,14 @@ public class LightSwitch : MonoBehaviour
 
     public GameObject lightsText;
 
-
-    public GameObject lightOB;
-
+    // Use a list to handle multiple light objects
+    public List<GameObject> lightOBs = new List<GameObject>();
 
     public AudioSource switchClick;
 
     public bool lightsAreOn;
     public bool lightsAreOff;
     public bool inReach;
-
 
     void Start()
     {
@@ -27,10 +25,13 @@ public class LightSwitch : MonoBehaviour
         lightsAreOff = true;
         onOB.SetActive(false);
         offOB.SetActive(true);
-        lightOB.SetActive(false);
+
+        // Ensure all lights are off at the start
+        foreach (GameObject lightOB in lightOBs)
+        {
+            lightOB.SetActive(false);
+        }
     }
-
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -50,30 +51,35 @@ public class LightSwitch : MonoBehaviour
         }
     }
 
-
-
     void Update()
     {
-        if(lightsAreOn && inReach && Input.GetButtonDown("Click"))
+        if (lightsAreOn && inReach && Input.GetButtonDown("Click"))
         {
-            lightOB.SetActive(false);
+            // Turn off all lights in the list
+            foreach (GameObject lightOB in lightOBs)
+            {
+                lightOB.SetActive(false);
+            }
+
             onOB.SetActive(false);
             offOB.SetActive(true);
             switchClick.Play();
             lightsAreOff = true;
             lightsAreOn = false;
         }
-
         else if (lightsAreOff && inReach && Input.GetButtonDown("Click"))
         {
-            lightOB.SetActive(true);
+            // Turn on all lights in the list
+            foreach (GameObject lightOB in lightOBs)
+            {
+                lightOB.SetActive(true);
+            }
+
             onOB.SetActive(true);
             offOB.SetActive(false);
             switchClick.Play();
             lightsAreOff = false;
             lightsAreOn = true;
         }
-
-
     }
 }

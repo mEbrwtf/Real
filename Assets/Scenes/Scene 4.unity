@@ -17043,6 +17043,7 @@ MonoBehaviour:
   currentAudioIndex: 0
   nextTriggers: []
   subtitleText: {fileID: 1714085518}
+  initialDelay: 1
 --- !u!65 &806640854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26078,6 +26079,7 @@ MonoBehaviour:
   currentAudioIndex: 0
   nextTriggers: []
   subtitleText: {fileID: 1714085518}
+  initialDelay: 1
 --- !u!65 &1330260438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40214,6 +40216,7 @@ MonoBehaviour:
   - {fileID: 656338443}
   - {fileID: 1987433353}
   subtitleText: {fileID: 1714085518}
+  initialDelay: 1
 --- !u!65 &2049872142
 BoxCollider:
   m_ObjectHideFlags: 0
