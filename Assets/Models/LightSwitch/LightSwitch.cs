@@ -23,13 +23,13 @@ public class LightSwitch : MonoBehaviour
         inReach = false;
         lightsAreOn = false;
         lightsAreOff = true;
-        onOB.SetActive(false);
-        offOB.SetActive(true);
+        //onOB.SetActive(false);
+        //offOB.SetActive(true);
 
         // Ensure all lights are off at the start
         foreach (GameObject lightOB in lightOBs)
         {
-            lightOB.SetActive(false);
+            //lightOB.SetActive(false);
         }
     }
 
