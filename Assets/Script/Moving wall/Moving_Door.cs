@@ -19,6 +19,7 @@ public class MoveOnTrigger : MonoBehaviour
     // Boolean to track if the movement has already been triggered
     private bool isMoving = false;
     public bool inReach;
+    public GameObject talk;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class MoveOnTrigger : MonoBehaviour
         {
             inReach = true;
             Debug.Log("inreach");
+
         }
     }
     void OnTriggerExit(Collider other)
@@ -45,6 +47,7 @@ public class MoveOnTrigger : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Click") && !isMoving)
         {
+            talk.SetActive(true);
             // Start the coroutine to delay the movement
             StartCoroutine(MoveObjectWithDelay());
         }

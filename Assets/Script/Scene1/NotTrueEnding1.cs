@@ -11,6 +11,7 @@ public class NotTrueEnding1 : MonoBehaviour
     public GameObject notpickup;
     public Collider door;
     public Collider triggerCollider;
+    private Coroutine delayedActionCoroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +45,19 @@ public class NotTrueEnding1 : MonoBehaviour
             pickup.Play();
             end.SetActive(true);
             door.enabled = true;
+
+            if (delayedActionCoroutine != null)
+            {
+                StopCoroutine(delayedActionCoroutine);
+                delayedActionCoroutine = null;
+            }
         }
-        else
+        else if (!(inReach && Input.GetButtonDown("Click")))
         {
-            StartCoroutine(DelayedAction());
+            if (delayedActionCoroutine == null)
+            {
+                delayedActionCoroutine = StartCoroutine(DelayedAction());
+            }
         }
     }
     private IEnumerator DelayedAction()
@@ -57,6 +67,12 @@ public class NotTrueEnding1 : MonoBehaviour
         pickup.Stop();
         triggerCollider.enabled = false;
         yield return new WaitForSeconds(2f);
+        delayedActionCoroutine = null;
+        //NotPickUp();
+    }
+    void NotPickUp()
+    {
         notpickup.SetActive(true);
     }
+
 }
