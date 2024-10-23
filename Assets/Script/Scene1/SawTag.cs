@@ -6,17 +6,16 @@ public class SawTag : MonoBehaviour
 {
     public bool inReach;
     public GameObject IsawIt;
-    public Collider tag;
     // Start is called before the first frame update
     void Start()
     {
         inReach = false;
-        tag.enabled = false;
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Reach")
         {
+            Debug.Log("tagReach");
             inReach = true;
         }
     }
