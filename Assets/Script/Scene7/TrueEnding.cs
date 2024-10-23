@@ -8,6 +8,8 @@ public class TrueEnding : MonoBehaviour
     public AudioSource ring;
     public AudioSource pickup;
     public GameObject end;
+    public GameObject notpickup;
+
     public Collider triggerCollider;
 
     // Start is called before the first frame update
@@ -42,5 +44,19 @@ public class TrueEnding : MonoBehaviour
             pickup.Play();
             end.SetActive(true);
         }
+        else
+        {
+            StartCoroutine(DelayedAction());
+        }
+    }
+
+    private IEnumerator DelayedAction()
+    {
+        yield return new WaitForSeconds(20f);
+        ring.Stop();
+        pickup.Stop();
+        triggerCollider.enabled = false;
+        yield return new WaitForSeconds(2f);
+        notpickup.SetActive(true);
     }
 }

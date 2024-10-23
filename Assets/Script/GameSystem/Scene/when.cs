@@ -9,6 +9,13 @@ public class when : MonoBehaviour
     {
         StartCoroutine(DelayedAction());
     }
+    void Update()
+    {
+        if (Input.GetButtonDown("Click"))
+        {
+            SceneManager.LoadScene("Scene 1");
+        }
+    }
 
     private IEnumerator DelayedAction()
     {
