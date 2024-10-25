@@ -32,10 +32,9 @@ public class GotKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inReach && Input.GetButtonDown("Click"))
+        if (inReach && Input.GetButtonDown("USE"))
         {
             trigger.enabled = true;
-            key.SetActive(false);
             ReKey.SetActive(true);
             Talk.SetActive(false);
         }

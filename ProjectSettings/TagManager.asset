@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Reach
   - Reach(Key)
+  - Key
+  - Item
+  - food
   layers:
   - Default
   - TransparentFX
