@@ -6,6 +6,7 @@ public class SelfClean : MonoBehaviour
 {
     public GameObject restroom;
     public Collider triggerCollider;
+    public Collider talk;
     public List<AudioSource> Clean; // List of AudioSources
     //public Camera camera1;
     //public Camera MainCamera;
@@ -46,7 +47,7 @@ public class SelfClean : MonoBehaviour
         {
             if (inReach && Input.GetButtonDown("Click"))
             {
-
+                DoorOpens();
                 restroom.SetActive(true);
             }
             //MainCamera.enabled = false;
@@ -63,7 +64,11 @@ public class SelfClean : MonoBehaviour
         {
             audio.Play(); // Play the current AudioSource
             yield return new WaitForSeconds(audio.clip.length); // Wait for the audio clip's length before moving to the next one        
-            DoorCloses();
+            //DoorCloses();
+            DoorOpens();
+            talk.enabled = true;
+
+
         }
     }
     void DoorOpens()
