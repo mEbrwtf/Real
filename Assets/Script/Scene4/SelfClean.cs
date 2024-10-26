@@ -46,7 +46,7 @@ public class SelfClean : MonoBehaviour
         {
             if (inReach && Input.GetButtonDown("Click"))
             {
-                DoorOpens();
+
                 restroom.SetActive(true);
             }
             //MainCamera.enabled = false;
