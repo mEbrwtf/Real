@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Transform playerHand; // Reference to the player's hand transform
-    private GameObject itemToPickup; // Current item selected for pickup
+    private GameObject itemToPickup; // The item within reach to be picked up
     private GameObject heldItem; // The item currently held by the player
 
     void OnTriggerEnter(Collider other)
@@ -19,12 +19,9 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("Item") && other.gameObject == itemToPickup)
         {
-            if (other.gameObject == itemToPickup)
-            {
-                itemToPickup = null; // Clear the item if it was the one being picked up
-            }
+            itemToPickup = null; // Clear the item if it was the one being picked up
             Debug.Log("Item out of reach");
         }
     }
@@ -32,12 +29,9 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         // Picking up an item
-        if (itemToPickup != null && Input.GetButtonDown("USE"))
+        if (itemToPickup != null && Input.GetButtonDown("USE") && heldItem == null) // Check if no item is currently held
         {
-            if (heldItem == null) // Check if no item is currently held
-            {
-                PickUpItem(itemToPickup);
-            }
+            PickUpItem(itemToPickup);
         }
 
         // Dropping the currently held item
@@ -49,16 +43,24 @@ public class Inventory : MonoBehaviour
 
     void PickUpItem(GameObject item)
     {
-        // Deactivate the original item in the scene
-        item.SetActive(false);
         Debug.Log("Picked up: " + item.name);
         
-        // Set the held item to the original item
-        heldItem = item; // Directly reference the item
+        // Set the held item to the selected item and deactivate it in the world
+        heldItem = item;
         
-        // Parent the held item to the player's hand and position it
+        // Remove Rigidbody to prevent physics effects while holding
+        Rigidbody rb = heldItem.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            Destroy(rb); // Remove the Rigidbody component
+        }
+
+        // Make sure the item is active and visible in the player's hand
+        heldItem.SetActive(true);
+
+        // Parent the held item to the player's hand and reset its position and rotation
         heldItem.transform.SetParent(playerHand);
-        heldItem.transform.localPosition = Vector3.zero; // Position it correctly in hand
+        heldItem.transform.localPosition = Vector3.zero; // Position correctly in hand
         heldItem.transform.localRotation = Quaternion.identity; // Reset rotation
     }
 
@@ -69,22 +71,19 @@ public class Inventory : MonoBehaviour
             // Unparent the held item from the player's hand
             heldItem.transform.SetParent(null);
 
-            // Add a Rigidbody if it doesn't already have one
-            Rigidbody rb = heldItem.GetComponent<Rigidbody>();
-            if (rb == null)
-            {
-                rb = heldItem.AddComponent<Rigidbody>(); // Add Rigidbody component if it doesn't exist
-            }
+            // Add a Rigidbody for physics when the item is dropped
+            Rigidbody rb = heldItem.AddComponent<Rigidbody>();
 
-            // Position the item in front of the player and make it active
-            heldItem.transform.position = playerHand.position + playerHand.forward; // Position it in front of the player
-            heldItem.SetActive(true); // Ensure the item is active in the world
+            // Position the item slightly in front of the player
+            heldItem.transform.position = playerHand.position + playerHand.forward; // Position in front
 
-            // Apply some upward force to give it a little push
-            rb.AddForce(playerHand.forward * 7, ForceMode.Impulse);
+            // Apply a force to simulate a natural drop
+            rb.AddForce(playerHand.forward * 5 + Vector3.up * 2, ForceMode.Impulse);
 
             Debug.Log("Dropped: " + heldItem.name);
-            heldItem = null; // Clear the held item reference
+            
+            // Clear the held item reference
+            heldItem = null;
         }
     }
 }

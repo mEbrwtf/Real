@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GotKey : MonoBehaviour
 {
-    public GameObject key;
     public GameObject ReKey;
     public GameObject Talk;
     public Collider trigger;
