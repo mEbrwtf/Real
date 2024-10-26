@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotTrueEnding1 : MonoBehaviour
+public class Ringing : MonoBehaviour
 {
     public bool inReach;
     public AudioSource ring;

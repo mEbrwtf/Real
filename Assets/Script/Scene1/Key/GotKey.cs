@@ -37,5 +37,11 @@ public class GotKey : MonoBehaviour
             ReKey.SetActive(true);
             Talk.SetActive(false);
         }
+        if (Input.GetButtonDown("DROP"))
+        {
+            trigger.enabled = false;
+            ReKey.SetActive(false);
+            Talk.SetActive(true);
+        }
     }
 }

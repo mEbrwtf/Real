@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Sitting : MonoBehaviour
 {
-    public Camera mainCamera;
-    public Camera sittinCamera;
+    public GameObject mainCamera;
+    public GameObject sittinCamera;
+    public GameObject SecChan;
     public bool inReach;
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera.enabled = true;
-        sittinCamera.enabled = false;
+        mainCamera.SetActive(true);
+        sittinCamera.SetActive(false);
         inReach = false;
     }
     void OnTriggerEnter(Collider other)
@@ -33,14 +34,29 @@ public class Sitting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inReach && Input.GetButtonDown("PickUp"))
+        if (inReach && Input.GetButtonDown("USE"))
         {
+            StartCoroutine(DelayedAction());
             SittingDown();
+        }
+        if (Input.GetButtonDown("OUT"))
+        {
+            StandingUp();
         }
     }
     void SittingDown()
     {
-        mainCamera.enabled = false;
-        sittinCamera.enabled = true;
+        mainCamera.SetActive(false);
+        sittinCamera.SetActive(true);
+    }
+    void StandingUp()
+    {
+        mainCamera.SetActive(true);
+        sittinCamera.SetActive(false);
+    }
+    private IEnumerator DelayedAction()
+    {
+        yield return new WaitForSeconds(20f);
+        SecChan.SetActive(true);
     }
 }
