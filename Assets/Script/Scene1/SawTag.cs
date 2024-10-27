@@ -6,6 +6,7 @@ public class SawTag : MonoBehaviour
 {
     public bool inReach;
     public GameObject IsawIt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class SawTag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inReach)
+        if (inReach && Input.GetButtonDown("USE"))
         {
             IsawIt.SetActive(true);
         }

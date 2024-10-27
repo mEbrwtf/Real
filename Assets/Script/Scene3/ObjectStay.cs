@@ -13,15 +13,12 @@ public class SneakyWalkAudio : MonoBehaviour
 
     void Start()
     {
-
-    }
-    void OnTriggerEnter(Collider other)
-    {
         // Record the initial forward direction and audio source position
         initialForward = playerCamera.forward;
         initialAudioPosition = audioSourceTransform.position;
         isAudioPaused = false;
     }
+
     void Update()
     {
         // Calculate the angle between the initial direction and the current forward direction
@@ -45,15 +42,10 @@ public class SneakyWalkAudio : MonoBehaviour
         }
 
         // Move the audio source smoothly based on whether the player is looking back or forward
-        if (isAudioPaused)
+        if (!isAudioPaused)
         {
             // Move audio source towards the close position
             audioSourceTransform.position = Vector3.Lerp(audioSourceTransform.position, closePosition, Time.deltaTime * movementSpeed);
-        }
-        else
-        {
-            // Move audio source back to its original position
-            audioSourceTransform.position = Vector3.Lerp(audioSourceTransform.position, initialAudioPosition, Time.deltaTime * movementSpeed);
         }
     }
 }
