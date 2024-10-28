@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcb7919d0b5b84c4eb79822941994040
+guid: cc8c0a3419b71484bada47538203f47e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,128 +7,63 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object004Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book001Mat
+    second: {fileID: 2100000, guid: 0bf6b087247164231a94c4ea91351de2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object008Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book002Mat
+    second: {fileID: 2100000, guid: e3edb6352ac75471d897b247179e93cc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object009Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book003Mat
+    second: {fileID: 2100000, guid: 3513a2f29ce544716a6ebe77452b9520, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object010Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book004Mat
+    second: {fileID: 2100000, guid: 3b7b29c2eb53340c3b0ac62ff7348ea7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object011Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book005Mat
+    second: {fileID: 2100000, guid: 7d6d0387c5f414a168ab049816cbf0b2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object012Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book006Mat
+    second: {fileID: 2100000, guid: d4f09d83544f84391be875439b5e60bf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object013Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book007Mat
+    second: {fileID: 2100000, guid: 7e06e3e3dd8664945adebf90d0e1a094, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object014Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book008Mat
+    second: {fileID: 2100000, guid: a3d03f1c4d21d49f0b53dda37e11f269, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object015Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book009Mat
+    second: {fileID: 2100000, guid: feea8b5551c244b0a805c5825add052a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object016Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book010Mat
+    second: {fileID: 2100000, guid: 33203a3f44b0e4bfda811514a9836236, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object017Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book011Mat
+    second: {fileID: 2100000, guid: 3f2ce39181e4f4866adc1b1c0db2a2ac, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Object018Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object019Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object020Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object021Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object022Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object023Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object024Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object025Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object026Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object027Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object028Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object029Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object030Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object031Mat
-    second: {fileID: 2100000, guid: 39ac4749102af4aee9ab36cdf6da3aac, type: 2}
+      name: book012Mat
+    second: {fileID: 2100000, guid: 1d379a68ab328450489604af273b9442, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
