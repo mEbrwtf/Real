@@ -3,7 +3,22 @@ guid: c64c52c2a933343a58454c074c3032b6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHOOB
+    second: {fileID: 2100000, guid: e2600552cb16046d2bec0192327dc8dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PICH
+    second: {fileID: 2100000, guid: e2600552cb16046d2bec0192327dc8dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZIR_CHARM.001
+    second: {fileID: 2100000, guid: 38de8a8cd93584fefa0e65700ad38efd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

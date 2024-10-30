@@ -3,7 +3,17 @@ guid: 95487967d140647c39ecb2cc8bd068d4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Derevo
+    second: {fileID: 2100000, guid: 9f5a9bdfbb2d6444ca06987eb8844646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 92f1554e59f574fedaf5699a41f75867, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
