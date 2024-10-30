@@ -3,7 +3,12 @@ guid: fb7a10a40d02540beaac5ae0ec3d7b5d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_MeshMat
+    second: {fileID: 2100000, guid: c0ee5f2a11ed64d64ae94ff9ce7d7078, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
