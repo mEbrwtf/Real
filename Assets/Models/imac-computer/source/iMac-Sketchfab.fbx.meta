@@ -3,7 +3,27 @@ guid: 7d90c825b58054ac2af622f8f8bbabdc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: f1e2e71a82ef34560847337925e78024, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keyboard
+    second: {fileID: 2100000, guid: 60ee5daa345bc48bf8e0ca32459a1e36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouse
+    second: {fileID: 2100000, guid: 9ca73c4334f8940149f9f67c60aa4fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iMac
+    second: {fileID: 2100000, guid: 10fc31632d6954794b3abc001f8cebe5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
