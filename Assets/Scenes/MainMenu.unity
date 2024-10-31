@@ -2211,7 +2211,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flase
+  m_Text: 'bruh
+
+'
 --- !u!222 &1740578495
 CanvasRenderer:
   m_ObjectHideFlags: 0
