@@ -82,7 +82,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _VertJitter: 0.95
+    - _VertJitter: 0.66
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.64480245, g: 0.6499941, b: 0.6603774, a: 1}
