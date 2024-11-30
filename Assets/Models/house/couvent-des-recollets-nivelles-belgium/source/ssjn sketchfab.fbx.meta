@@ -3,7 +3,22 @@ guid: e49169c4eafc346fdaff59fd2513c695
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cloitre
+    second: {fileID: 2100000, guid: 6eeb0d62288e94bbe81bc5e4e54c0da3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: 433b5a7aa48e44779a2d65321aaf89ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ssjn
+    second: {fileID: 2100000, guid: 5ca16e1d830794254984b139d87110f4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

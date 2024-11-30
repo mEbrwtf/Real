@@ -3,7 +3,12 @@ guid: 3fa8cd311ae524ab19c103d023320df1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nivelles 16
+    second: {fileID: 2100000, guid: de7016835ce5e44c886e4f14d69e98a7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
