@@ -15,7 +15,6 @@ public class NotTrueEnding1 : MonoBehaviour
 
     void Start()
     {
-        ring.Play();
         inReach = false;
 
         // Start the ring coroutine to manage the duration
@@ -66,6 +65,8 @@ public class NotTrueEnding1 : MonoBehaviour
 
     private IEnumerator RingDuration()
     {
+        yield return new WaitForSeconds(60f);
+        ring.Play();
         yield return new WaitForSeconds(20f);
         ring.Stop();
         NotPickUp();
