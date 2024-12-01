@@ -16,7 +16,7 @@ public class NotTrueEnding1 : MonoBehaviour
     void Start()
     {
         inReach = false;
-
+        pickup.enabled = false;
         // Start the ring coroutine to manage the duration
         ringCoroutine = StartCoroutine(RingDuration());
     }
@@ -67,6 +67,7 @@ public class NotTrueEnding1 : MonoBehaviour
     {
         yield return new WaitForSeconds(60f);
         ring.Play();
+        pickup.enabled = true;
         yield return new WaitForSeconds(20f);
         ring.Stop();
         NotPickUp();
