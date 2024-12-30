@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chill.unity
     guid: 3b3d19454a0e04228bbf9cb4a026dd58
   - enabled: 1
+    path: Assets/Scenes/Chill2.unity
+    guid: 5e391237a42cb45f8b04cb628948f938
+  - enabled: 1
     path: Assets/Scenes/Ending(1).unity
     guid: de5e4ed436aaa4b3caf6e9ede7ed20d2
   m_configObjects: {}
