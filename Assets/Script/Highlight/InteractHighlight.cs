@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractHighlight : MonoBehaviour
 {
     public GameObject unhighlight;
     public GameObject highlight;
     bool inReach;
+    public GameObject display_Text;
+    public GameObject Dot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,8 @@ public class InteractHighlight : MonoBehaviour
         if (other.CompareTag("Reach"))
         {
             inReach = true;
+            display_Text.SetActive(true);
+            Dot.SetActive(false);
             highlight.SetActive(true);
             unhighlight.SetActive(false);
         }
@@ -27,6 +33,8 @@ public class InteractHighlight : MonoBehaviour
         if (other.CompareTag("Reach"))
         {
             inReach = false;
+            display_Text.SetActive(false);
+            Dot.SetActive(true);
             highlight.SetActive(false);
             unhighlight.SetActive(true);
         }
@@ -36,6 +44,8 @@ public class InteractHighlight : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("USE"))
         {
+            display_Text.SetActive(false);
+            Dot.SetActive(true);
             highlight.SetActive(false);
             unhighlight.SetActive(true);
         }
