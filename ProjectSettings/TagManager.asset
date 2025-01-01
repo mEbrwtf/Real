@@ -9,6 +9,7 @@ TagManager:
   - Key
   - Item
   - food
+  - Super Player
   layers:
   - Default
   - TransparentFX
