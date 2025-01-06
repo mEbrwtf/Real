@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class ToEnding : MonoBehaviour
+public class ToScene1 : MonoBehaviour
 {
     public Image black;
     public Animator fade;
@@ -14,16 +14,17 @@ public class ToEnding : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Super Player"))
+        if (other.CompareTag("Player"))
         {
-            StartCoroutine(Fading2());
+            StartCoroutine(Fading());
         }
     }
-    IEnumerator Fading2()
+
+    IEnumerator Fading()
     {
         fade.SetBool("Fade", true);
         yield return new WaitUntil(() => black.color.a == 1);
-        SceneManager.LoadScene("Ending(1)");
+        SceneManager.LoadScene("Scene 1");
     }
     // Update is called once per frame
     void Update()
