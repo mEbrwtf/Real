@@ -22395,8 +22395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f4aa71bb9fb402891da43d523263e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 316976012}
+  black: {fileID: 2083790022}
   fade: {fileID: 2083790021}
+  isNextScene: 1
 --- !u!4 &1157420352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fadfab6bafe404723ae485bd58c80030, type: 3}
@@ -32686,7 +32687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1670245830
 Transform:
   m_ObjectHideFlags: 0
@@ -42223,7 +42224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2076413986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42322,8 +42323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbd6eb7500e54fa2a0ce960f09bc40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  splayer: {fileID: 1670245829}
 --- !u!1 &2083790019
 GameObject:
   m_ObjectHideFlags: 0

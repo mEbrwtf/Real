@@ -1,30 +1,50 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TriggerAudioManager : MonoBehaviour
 {
     public List<AudioSource> audioSources; // List of AudioSources to handle multiple audio clips
     public List<string> subtitles; // List of subtitles corresponding to each audio clip
-    public List<float> audioDelays; // List of delays corresponding to each audio clip
     public Collider triggerCollider; // To disable the collider after the audio sequence
     public static TriggerAudioManager activeTrigger; // Tracks the currently active TriggerAudioManager instance
     public int currentAudioIndex = 0; // Tracks the current audio in the list
-    public List<Collider> nextTriggers; // List of next triggers to activate progressively after each clip
 
     [Header("UI Elements")]
     public Text subtitleText; // Reference to the UI Text element for displaying subtitles
+    public GameObject backgroundPanel; // Reference to the UI Panel that will act as the background
 
-    [Header("Audio Start Delay")]
+    [Header("Audio and Subtitle Delay")]
     public float initialDelay = 1.0f; // Delay before starting the audio sequence
+    public float subtitleSpeed = 0.05f; // Speed at which the subtitle text is revealed
+
+    private bool isWaitingForKeyPress = false; // Tracks whether we are waiting for a key press
+    private bool isTextDisplaying = false; // Ensures text is fully displayed before moving on
 
     void Start()
     {
         triggerCollider = GetComponent<Collider>(); // Get the trigger collider
         subtitleText.text = ""; // Clear the subtitle text at the start
+
+        if (backgroundPanel != null)
+        {
+            // Set the background panel to the correct size and transparency (optional)
+            RectTransform rt = backgroundPanel.GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(Screen.width, Screen.height / 3); // Customize the panel size as needed
+            backgroundPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f); // Optional: semi-transparent black background
+        }
     }
 
-    // When the player enters the trigger zone
+    void Update()
+    {
+        if (isWaitingForKeyPress && Input.anyKeyDown && !isTextDisplaying) // Check if any key is pressed
+        {
+            isWaitingForKeyPress = false; // Reset waiting state
+            OnKeyPress(); // Handle the key press
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) // Ensure the object is the player
@@ -39,23 +59,21 @@ public class TriggerAudioManager : MonoBehaviour
         }
     }
 
-    // Coroutine to start the audio after the initial delay
-    private System.Collections.IEnumerator StartAudioWithDelay(float delay)
+    private IEnumerator StartAudioWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified initial delay
-        PlayAudio(); // Start playing the audio sequence
+        PlayAudio(); // Start playing the first audio
     }
 
-    // Completely reset the audio manager
     void ResetAudioManager()
     {
         StopAllAudio(); // Stop all audio sources
         subtitleText.text = ""; // Clear the subtitle text
         currentAudioIndex = 0; // Reset the audio index
         StopAllCoroutines(); // Stop any running coroutines
+        isWaitingForKeyPress = false; // Reset waiting state
     }
 
-    // Stop all audio playback
     void StopAllAudio()
     {
         foreach (var audioSource in audioSources)
@@ -67,71 +85,68 @@ public class TriggerAudioManager : MonoBehaviour
         }
     }
 
-    // Play the current audio
     void PlayAudio()
     {
-        // Stop all audio sources before playing the current one
-        StopAllAudio();
+        StopAllAudio(); // Stop all audio sources before playing the current one
 
-        // Play the current audio in the list
-        AudioSource currentPlayingAudio = audioSources[currentAudioIndex];
+        AudioSource currentPlayingAudio = audioSources[currentAudioIndex]; // Play the current audio in the list
         currentPlayingAudio.Play();
 
-        // Display the corresponding subtitle for the entire audio length
-        DisplaySubtitle(currentAudioIndex);
+        DisplaySubtitle(currentAudioIndex); // Display the corresponding subtitle
 
-        // Start a coroutine to wait for the audio to finish and play the next one with delay
-        StartCoroutine(PlayNextAudioAfterCurrentEnds(currentPlayingAudio.clip.length, audioDelays[currentAudioIndex]));
+        isWaitingForKeyPress = true; // Wait for the player to press a key to continue
     }
 
-    // Display the subtitle for the current audio index
     void DisplaySubtitle(int index)
     {
         if (index < subtitles.Count) // Check if index is valid
         {
-            subtitleText.text = subtitles[index]; // Display the corresponding subtitle
+            subtitleText.text = ""; // Clear previous subtitle text
+            StartCoroutine(TypeSubtitle(subtitles[index])); // Display the current subtitle character by character
         }
     }
 
-    // Coroutine to wait for the audio to finish and then play the next one with delay
-    private System.Collections.IEnumerator PlayNextAudioAfterCurrentEnds(float audioLength, float audioDelay)
+    private IEnumerator TypeSubtitle(string subtitle)
     {
-        // Wait until the current audio clip is finished
-        yield return new WaitForSeconds(audioLength);
+        isTextDisplaying = true; // Mark the text as displaying
 
-        // Clear the subtitle text immediately after the audio ends
-        subtitleText.text = ""; // Clear the subtitle text
-
-        // Wait for the specified delay before moving to the next audio
-        yield return new WaitForSeconds(audioDelay);
-
-        // Activate the next trigger after the current audio
-        if (currentAudioIndex < nextTriggers.Count)
+        foreach (char letter in subtitle)
         {
-            nextTriggers[currentAudioIndex].enabled = true; // Enable the next trigger based on the current index
+            subtitleText.text += letter; // Add one letter at a time
+            yield return new WaitForSeconds(subtitleSpeed); // Wait for a brief moment between characters
         }
 
-        // Move to the next audio
-        currentAudioIndex++;
+        // Once subtitle is fully displayed, stop the audio
+        StopAllAudio();
 
-        if (currentAudioIndex < audioSources.Count) // Check if there's a next audio
+        isTextDisplaying = false; // Mark the text as fully displayed
+    }
+
+    void OnKeyPress()
+    {
+        if (currentAudioIndex < audioSources.Count)
         {
-            PlayAudio(); // Play the next audio
-        }
-        else
-        {
-            // Optionally disable the current trigger collider after all audios are done
-            // triggerCollider.enabled = false;
+            subtitleText.text = ""; // Clear the last subtitle when a key is pressed
+
+            currentAudioIndex++; // Move to the next audio
+
+            if (currentAudioIndex < audioSources.Count) // Check if there's a next audio
+            {
+                PlayAudio(); // Play the next audio
+            }
+            else
+            {
+                triggerCollider.enabled = false; // Disable the current trigger collider after all audios are done
+                // Keep the last subtitle displayed
+            }
         }
     }
 
-    // When the player exits the trigger zone
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player")) // Ensure the object is the player
         {
-            // Optionally disable the collider immediately when the player exits
-            triggerCollider.enabled = false;
+            triggerCollider.enabled = false; // Optionally disable the collider immediately when the player exits
         }
     }
 }

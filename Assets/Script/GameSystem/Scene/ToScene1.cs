@@ -1,17 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class ToScene1 : MonoBehaviour
 {
     public Image black;
     public Animator fade;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public bool isNextScene = true;
 
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -25,10 +22,5 @@ public class ToScene1 : MonoBehaviour
         fade.SetBool("Fade", true);
         yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene("Scene 1");
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
