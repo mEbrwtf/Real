@@ -1,0 +1,11 @@
+Model Information:
+* title:	Observatory Window Frame
+* source:	https://sketchfab.com/3d-models/observatory-window-frame-aeaf071a94bc40bc8159070df9502d9f
+* author:	lpfeffer (https://sketchfab.com/lpfeffer)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Observatory Window Frame" (https://sketchfab.com/3d-models/observatory-window-frame-aeaf071a94bc40bc8159070df9502d9f) by lpfeffer (https://sketchfab.com/lpfeffer) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
