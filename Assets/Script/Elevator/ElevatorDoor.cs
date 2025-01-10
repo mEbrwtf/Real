@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ElevatorDoor : MonoBehaviour
 {
+    public AudioSource doorOpen;
+    public AudioSource doorClose;
+
     bool inReach;
     public Animator LeftDoor;
     public Animator RightDoor;
@@ -40,6 +43,7 @@ public class ElevatorDoor : MonoBehaviour
     }
     public void EDopen()
     {
+        doorOpen.Play();
         LeftDoor.SetBool("Open", true);
         LeftDoor.SetBool("Close", false);
         RightDoor.SetBool("Open", true);
@@ -47,6 +51,7 @@ public class ElevatorDoor : MonoBehaviour
     }
     public void EDclose()
     {
+        doorClose.Play();
         LeftDoor.SetBool("Close", true);
         LeftDoor.SetBool("Open", false);
         RightDoor.SetBool("Close", true);
