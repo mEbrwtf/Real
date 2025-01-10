@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NextFloor : MonoBehaviour
 {
+    public AudioSource doorOpen;
+    public AudioSource doorClose;
     public Animator LeftDoor;
     public Animator RightDoor;
     public Collider doorTrigger; // To reference the trigger's collider
@@ -43,6 +45,7 @@ public class NextFloor : MonoBehaviour
     }
     public void EDopen()
     {
+        doorOpen.Play();
         LeftDoor.SetBool("Open", true);
         LeftDoor.SetBool("Close", false);
         RightDoor.SetBool("Open", true);
@@ -50,6 +53,7 @@ public class NextFloor : MonoBehaviour
     }
     public void EDclose()
     {
+        doorClose.Play();
         LeftDoor.SetBool("Close", true);
         LeftDoor.SetBool("Open", false);
         RightDoor.SetBool("Close", true);
