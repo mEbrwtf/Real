@@ -3,7 +3,47 @@ guid: c8409685bcb3d41d7877c7fc799895b7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_BALUSTERtk-whitewood.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_BEGIN_WALLwhite-paint.jpg1110.3
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_BOTTOMRAILbig-oaktex.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_HANDRAILbig-oaktex.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_POSTbig-oaktex.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_RISERBirch.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_STRINGtk-whitewood.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: x0023_TREADbig-oaktex.jpg1111
+    second: {fileID: 2100000, guid: a48566e2efe6549599c146410814f34a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
