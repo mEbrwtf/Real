@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _AffineMapIntensity: 0.029
     - _DrawDist: 0
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _Metallic: 0
     - _VertJitter: 0.95
     m_Colors:

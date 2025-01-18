@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sink
+* source:	https://sketchfab.com/3d-models/sink-29eae075fd384a03aa0e4cb06d9794df
+* author:	KIFIR (https://sketchfab.com/kifir)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sink" (https://sketchfab.com/3d-models/sink-29eae075fd384a03aa0e4cb06d9794df) by KIFIR (https://sketchfab.com/kifir) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

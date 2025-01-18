@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b678fdede05634956ad0a3f0cd1587bc, type: 3}
+        m_Texture: {fileID: 2800000, guid: a33838a1a8e58491aaeac4baa578d056, type: 3}
         m_Scale: {x: 1.18, y: 0.53}
         m_Offset: {x: -0.06, y: 0}
     - _SpecGlossMap:
@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _AffineMapIntensity: 0.029
     - _DrawDist: 0
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _Metallic: 0
     - _VertJitter: 0.95
     m_Colors:
