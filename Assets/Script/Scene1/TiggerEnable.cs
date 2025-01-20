@@ -77,7 +77,7 @@ public class TriggerAudioManager : MonoBehaviour
         AudioSource currentPlayingAudio = audioSources[currentAudioIndex];
         currentPlayingAudio.Play();
 
-        // Display the corresponding subtitle for the current audio
+        // Display the corresponding subtitle for the entire audio length
         DisplaySubtitle(currentAudioIndex);
 
         // Start a coroutine to wait for the audio to finish and play the next one with delay
@@ -121,7 +121,7 @@ public class TriggerAudioManager : MonoBehaviour
         else
         {
             // Optionally disable the current trigger collider after all audios are done
-            triggerCollider.enabled = false;
+            // triggerCollider.enabled = false;
         }
     }
 
