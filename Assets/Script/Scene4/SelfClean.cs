@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelfClean : MonoBehaviour
 {
     public GameObject restroom;
-    public Collider triggerCollider;
+    public Collider button;
     public Collider talk;
     public List<AudioSource> Clean; // List of AudioSources
     //public Camera camera1;
@@ -17,6 +17,7 @@ public class SelfClean : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inReach = false;
         //camera1.enabled = false;
         isDoorOpen = door.GetBool("Open"); // Initialize the door state based on Animator's "Open" parameter
     }
@@ -24,7 +25,7 @@ public class SelfClean : MonoBehaviour
     // Trigger detection for when the player enters the "Reach" zone
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Reach"))
+        if (other.CompareTag("Reach"))
         {
             Debug.Log("In Reach");
             inReach = true; // Mark the player as within reach
@@ -34,7 +35,7 @@ public class SelfClean : MonoBehaviour
     // Trigger detection for when the player exits the "Reach" zone
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Reach"))
+        if (other.CompareTag("Reach"))
         {
             inReach = false; // Mark the player as out of reach
         }
@@ -43,13 +44,12 @@ public class SelfClean : MonoBehaviour
     void Update()
     {
         // If the player is in reach and presses the "Click" button
-        if (inReach && Input.GetButtonDown("Click"))
+        if (inReach && Input.GetButtonDown("USE"))
         {
-            if (inReach && Input.GetButtonDown("Click"))
-            {
-                DoorOpens();
-                restroom.SetActive(true);
-            }
+            DoorOpens();
+            restroom.SetActive(true);
+            button.enabled = false;
+            talk.enabled = true;
             //MainCamera.enabled = false;
             //camera1.enabled = true;
 
@@ -66,9 +66,6 @@ public class SelfClean : MonoBehaviour
             yield return new WaitForSeconds(audio.clip.length); // Wait for the audio clip's length before moving to the next one        
             //DoorCloses();
             DoorOpens();
-            talk.enabled = true;
-
-
         }
     }
     void DoorOpens()
