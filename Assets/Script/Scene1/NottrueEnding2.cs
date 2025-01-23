@@ -7,7 +7,7 @@ public class NottrueEnding2 : MonoBehaviour
     public bool inReach;
     public AudioSource ring;
     public AudioSource ppickup;
-    public GameObject end;
+    public Collider end;
     public Collider notpickup;
     public Collider pickup; // Collider to prevent pickup
     public Collider door;
@@ -56,7 +56,7 @@ public class NottrueEnding2 : MonoBehaviour
         }
         ring.Stop(); // Stop the ringing sound
         ppickup.Play(); // Play pickup sound
-        end.SetActive(true); // Activate the end object
+        end.enabled = true; // Activate the end object
         door.enabled = true; // Enable the door collider
 
         // Call NotPickUp() to disable pickup
@@ -65,7 +65,7 @@ public class NottrueEnding2 : MonoBehaviour
 
     private IEnumerator RingDuration()
     {
-        yield return new WaitForSeconds(0.0f);
+        yield return new WaitForSeconds(1f);
         ring.Play();
         pickup.enabled = true;
         yield return new WaitForSeconds(32f);
