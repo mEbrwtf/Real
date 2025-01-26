@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Sitting : MonoBehaviour
 {
+    public Collider Talk;
+    public Collider NewTalk;
     public GameObject mainCamera;
     public GameObject sittinCamera;
     public GameObject SecChan;
@@ -48,6 +50,8 @@ public class Sitting : MonoBehaviour
     {
         mainCamera.SetActive(false);
         sittinCamera.SetActive(true);
+        Talk.enabled = false;
+        NewTalk.enabled = true;
     }
     void StandingUp()
     {
@@ -56,7 +60,7 @@ public class Sitting : MonoBehaviour
     }
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(30f);
         SecChan.SetActive(true);
     }
 }

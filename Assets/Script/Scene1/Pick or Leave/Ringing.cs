@@ -41,7 +41,7 @@ public class Ringing : MonoBehaviour
     void Update()
     {
         // Only allow pickup if the item is in reach and has not been picked up yet
-        if (inReach && Input.GetButtonDown("Click"))
+        if (inReach && Input.GetButtonDown("USE"))
         {
             StopRingAndPickup();
         }
