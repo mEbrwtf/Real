@@ -14,7 +14,7 @@ public class ToEnding : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Super Player"))
+        if (other.CompareTag("Player"))
         {
             StartCoroutine(Fading2());
         }
