@@ -25,6 +25,7 @@ public class Sleep : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         fade.SetBool("Fade", true);
+        yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene("Scene 1");
     }
 }
