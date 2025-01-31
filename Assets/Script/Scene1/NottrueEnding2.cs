@@ -65,7 +65,7 @@ public class NottrueEnding2 : MonoBehaviour
 
     private IEnumerator RingDuration()
     {
-        yield return new WaitForSeconds(19f);
+        yield return new WaitForSeconds(25f);
         ring.Play();
         pickup.enabled = true;
         yield return new WaitForSeconds(32f);
