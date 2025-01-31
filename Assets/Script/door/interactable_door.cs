@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactable_door : MonoBehaviour
+public class InteractableDoors : MonoBehaviour
 {
     public Animator door;
+    public AudioSource openSound;
+    public AudioSource closeSound;
     public bool inReach;
-    // Start is called before the first frame update
+    
+    private bool isOpen = false; // Track door state
+
     void Start()
     {
         inReach = false;
@@ -16,46 +20,54 @@ public class interactable_door : MonoBehaviour
     {
         if (other.gameObject.tag == "Reach")
         {
-            Debug.Log("In Reach");
             inReach = true;
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-
         if (other.gameObject.tag == "Reach")
         {
             inReach = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
-            DoorOpens();
-        }
-
-        else
-        {
-            DoorCloses();
+            if (isOpen)
+            {
+                DoorCloses();
+            }
+            else
+            {
+                DoorOpens();
+            }
         }
     }
 
-   void DoorOpens()
+    void DoorOpens()
     {
-        Debug.Log("It's Opens");
-        door.SetBool("Open", true);
-        door.SetBool("Close", false);
+        if (!isOpen) // Only open if it's closed
+        {
+            Debug.Log("It Opens");
+            door.SetBool("Open", true);
+            door.SetBool("Closed", false);
+            if (openSound) openSound.Play();
+            isOpen = true;
+        }
     }
 
     void DoorCloses()
     {
-        //Debug.Log("It's Closes");
-        door.SetBool("Open", false);
-        door.SetBool("Close", true);
+        if (isOpen) // Only close if it's open
+        {
+            Debug.Log("It Closes");
+            door.SetBool("Open", false);
+            door.SetBool("Closed", true);
+            if (closeSound) closeSound.Play();
+            isOpen = false;
+        }
     }
-
-
 }

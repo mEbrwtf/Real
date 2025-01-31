@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ToEnding : MonoBehaviour
 {
-    public Image black;
-    public Animator fade;
+    public GameObject timeline;
+    //public Image black;
+    //public Animator fade;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,8 @@ public class ToEnding : MonoBehaviour
     }
     IEnumerator Fading2()
     {
-        fade.SetBool("Fade", true);
-        yield return new WaitUntil(() => black.color.a == 1);
+
+        //fade.SetBool("Fade", true);
         SceneManager.LoadScene("Ending(1)");
     }
     // Update is called once per frame

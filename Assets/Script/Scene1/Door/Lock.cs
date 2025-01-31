@@ -15,7 +15,7 @@ public class Lock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            door.SetBool("Close", true);
+            door.SetBool("Closed", true);
         }
     }
     // Update is called once per frame

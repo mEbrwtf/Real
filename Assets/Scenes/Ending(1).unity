@@ -10754,7 +10754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &475942792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10772,7 +10772,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 11.201706, y: 1.2700781, z: 9.173781}
   m_Center: {x: 1.1482735, y: -1.8645575, z: -1.4774213}
@@ -54344,6 +54344,7 @@ GameObject:
   - component: {fileID: 1583436588}
   - component: {fileID: 1583436587}
   - component: {fileID: 1583436586}
+  - component: {fileID: 1583436589}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -54418,13 +54419,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583436585}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187.68921, y: 3.62, z: 151.4852}
+  m_LocalRotation: {x: 0.10280791, y: -0.6995931, z: 0.10280791, w: 0.6995931}
+  m_LocalPosition: {x: 187.6892, y: 2.37, z: 152.364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.72, y: -90, z: 0}
+--- !u!95 &1583436589
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583436585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a3947c4e060343fcbfb7b9173b09f15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1588244162
 GameObject:
   m_ObjectHideFlags: 0
@@ -58615,7 +58637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1839202647
 PlayableDirector:
   m_ObjectHideFlags: 0

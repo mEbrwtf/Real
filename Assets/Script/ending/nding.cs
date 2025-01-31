@@ -8,12 +8,17 @@ public class nding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Ending.SetActive(true);
     }
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+        Ending.SetActive(true);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
