@@ -17,12 +17,13 @@ public class ToEnding : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            timeline.SetActive(true);
             StartCoroutine(Fading2());
         }
     }
     IEnumerator Fading2()
     {
-
+        yield return new WaitForSeconds(10f);
         //fade.SetBool("Fade", true);
         SceneManager.LoadScene("Ending(1)");
     }
