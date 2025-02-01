@@ -15,7 +15,7 @@ public class Audio3DManager : MonoBehaviour
 
         // Set minimum and maximum distance
         audioSource.minDistance = 5.0f;
-        audioSource.maxDistance = 100.0f;
+        audioSource.maxDistance = 10.0f;
 
         // Optional: Adjust Doppler level
         audioSource.dopplerLevel = 1.0f;

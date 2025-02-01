@@ -13,7 +13,7 @@ public class when : MonoBehaviour
     {
         if (Input.GetButtonDown("Click"))
         {
-            SceneManager.LoadScene("Scene 1");
+            SceneManager.LoadScene("OpenScene");
         }
     }
 
