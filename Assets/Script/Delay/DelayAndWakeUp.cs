@@ -5,7 +5,7 @@ using UnityEngine;
 public class DelayAndWakeUp : MonoBehaviour
 {
     public GameObject Key;
-    public Collider collider;
+    public Collider door;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,9 @@ public class DelayAndWakeUp : MonoBehaviour
     }
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(25f);
         Key.SetActive(true);
-        collider.enabled = true;
+        door.enabled = true;
 
     }
 }
