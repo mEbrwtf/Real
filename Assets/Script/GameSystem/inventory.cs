@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         // Picking up an item
-        if (itemToPickup != null && Input.GetButtonDown("USE") && heldItem == null) // Check if no item is currently held
+        if (itemToPickup != null && Input.GetButtonDown("Click") && heldItem == null) // Check if no item is currently held
         {
             PickUpItem(itemToPickup);
         }
