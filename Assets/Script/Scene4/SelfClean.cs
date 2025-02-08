@@ -72,14 +72,14 @@ public class SelfClean : MonoBehaviour
     {
         Debug.Log("It's Opens");
         door.SetBool("Open", true);
-        door.SetBool("Close", false);
+        door.SetBool("Closed", false);
     }
     // Method to handle closing the door
     void DoorCloses()
     {
         Debug.Log("Door is closing");
         door.SetBool("Open", false); // Set the "Open" state to false
-        door.SetBool("Close", true); // Trigger the "Close" animation
+        door.SetBool("Closed", true); // Trigger the "Close" animation
         isDoorOpen = false; // Update the door state
     }
 }

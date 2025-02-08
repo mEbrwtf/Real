@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+    public Collider Self;
     public Animator wall;
+    public Animator buttonA;
     bool inReach;
     public GameObject wow;
 
@@ -42,5 +44,7 @@ public class Button : MonoBehaviour
     void ButtonClick()
     {
         wall.SetBool("Down", true);
+        buttonA.SetBool("A", true);
+        Self.enabled = false;
     }
 }

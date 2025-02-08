@@ -20,6 +20,7 @@ public class MoveOnTrigger : MonoBehaviour
     private bool isMoving = false;
     public bool inReach;
     public GameObject talk;
+    public AudioSource Slide;
 
     void Start()
     {
@@ -57,6 +58,7 @@ public class MoveOnTrigger : MonoBehaviour
     {
         // Mark the movement as initiated
         isMoving = true;
+        Slide.Play();
 
         // Wait for the specified delay time
         yield return new WaitForSeconds(delay);
