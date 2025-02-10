@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SelfClean : MonoBehaviour
 {
-    public GameObject restroom;
+    public GameObject OldFloor;
+    public GameObject NewFloor;
     public Collider button;
     public Collider talk;
-    public List<AudioSource> Clean; // List of AudioSources
+        public List<AudioSource> Clean; // List of AudioSources
     //public Camera camera1;
     //public Camera MainCamera;
     bool inReach;
@@ -44,10 +45,11 @@ public class SelfClean : MonoBehaviour
     void Update()
     {
         // If the player is in reach and presses the "Click" button
-        if (inReach && Input.GetButtonDown("USE"))
+        if (inReach && Input.GetKeyDown("Click"))
         {
             DoorOpens();
-            restroom.SetActive(true);
+            NewFloor.SetActive(true);
+            OldFloor.SetActive(false);
             button.enabled = false;
             talk.enabled = true;
             //MainCamera.enabled = false;
@@ -71,8 +73,8 @@ public class SelfClean : MonoBehaviour
     void DoorOpens()
     {
         Debug.Log("It's Opens");
-        door.SetBool("Open", true);
-        door.SetBool("Closed", false);
+        door.SetBool("Closed", true);
+        door.SetBool("Open", false);
     }
     // Method to handle closing the door
     void DoorCloses()
