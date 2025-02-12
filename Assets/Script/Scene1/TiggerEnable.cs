@@ -86,7 +86,7 @@ public class TriggerAudioManager : MonoBehaviour
 
     // Display the subtitle for the current audio index
     void DisplaySubtitle(int index)
-    {
+    {   
         if (index < subtitles.Count) // Check if index is valid
         {
             subtitleText.text = subtitles[index]; // Display the corresponding subtitle

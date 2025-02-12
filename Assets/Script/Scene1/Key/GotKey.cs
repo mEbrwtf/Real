@@ -1,47 +1,64 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GotKey : MonoBehaviour
 {
     public GameObject ReKey;
     public GameObject Talk;
-    public Collider trigger;
+    public GameObject trigger;
     public bool inReach;
-    // Start is called before the first frame update
+
     void Start()
     {
-        trigger.enabled = false;
+        trigger.SetActive(true);
+        Talk.SetActive(false);
         inReach = false;
     }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Reach")
+        if (other.CompareTag("Reach"))
         {
             inReach = true;
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Reach")
+        if (other.CompareTag("Reach"))
         {
             inReach = false;
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (inReach && Input.GetButtonDown("Click"))
         {
-            trigger.enabled = true;
+            //StartCoroutine(PickUpKey());
+            trigger.SetActive(true);
             ReKey.SetActive(true);
             Talk.SetActive(false);
         }
+
         if (Input.GetButtonDown("DROP"))
         {
-            trigger.enabled = false;
+            //StartCoroutine(DropKey());
+            trigger.SetActive(false);
             ReKey.SetActive(false);
             Talk.SetActive(true);
         }
     }
+
+    /*private IEnumerator PickUpKey()
+    {
+        yield return new WaitForSeconds(0f); // Adjust if needed
+
+    }
+
+    private IEnumerator DropKey()
+    {
+        yield return new WaitForSeconds(0f); // Adjust if needed
+
+    }*/
 }
