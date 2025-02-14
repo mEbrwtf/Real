@@ -6,11 +6,7 @@ public class SelfClean : MonoBehaviour
 {
     public GameObject OldFloor;
     public GameObject NewFloor;
-    public Collider button;
-    public Collider talk;
-    public List<AudioSource> Clean; // List of AudioSources
-    //public Camera camera1;
-    //public Camera MainCamera;
+
     bool inReach = false;
     public Animator door; // Animator controlling the door
     private bool isDoorOpen; // Track if the door is open
@@ -49,11 +45,6 @@ public class SelfClean : MonoBehaviour
             DoorOpens();
             NewFloor.SetActive(true);
             OldFloor.SetActive(false);
-            button.enabled = false;
-            talk.enabled = true;
-            //MainCamera.enabled = false;
-            //camera1.enabled = true;
-
             StartCoroutine(PlaySoundsWithDelay()); // Call the coroutine to play sounds with delay
         }
     }
@@ -61,13 +52,9 @@ public class SelfClean : MonoBehaviour
     // Coroutine to play sounds one after the other with a delay
     IEnumerator PlaySoundsWithDelay()
     {
-        foreach (AudioSource audio in Clean)
-        {
-            audio.Play(); // Play the current AudioSource
-            yield return new WaitForSeconds(audio.clip.length); // Wait for the audio clip's length before moving to the next one        
-            //DoorCloses();
-            DoorOpens();
-        }
+        yield return new WaitForSeconds(5f); // Wait for the audio clip's length before moving to the next one        
+                                             //DoorCloses();
+        DoorOpens();
     }
     void DoorOpens()
     {
