@@ -8,25 +8,24 @@ public class SelfClean : MonoBehaviour
     public GameObject NewFloor;
     public Collider button;
     public Collider talk;
-        public List<AudioSource> Clean; // List of AudioSources
+    public List<AudioSource> Clean; // List of AudioSources
     //public Camera camera1;
     //public Camera MainCamera;
-    bool inReach;
+    bool inReach = false;
     public Animator door; // Animator controlling the door
     private bool isDoorOpen; // Track if the door is open
 
     // Start is called before the first frame update
     void Start()
     {
-        inReach = false;
         //camera1.enabled = false;
-        isDoorOpen = door.GetBool("Open"); // Initialize the door state based on Animator's "Open" parameter
+        isDoorOpen = door.GetBool("Closed"); // Initialize the door state based on Animator's "Open" parameter
     }
 
     // Trigger detection for when the player enters the "Reach" zone
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Reach"))
+        if (other.gameObject.tag == "Reach")
         {
             Debug.Log("In Reach");
             inReach = true; // Mark the player as within reach
@@ -36,7 +35,7 @@ public class SelfClean : MonoBehaviour
     // Trigger detection for when the player exits the "Reach" zone
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Reach"))
+        if (other.gameObject.tag == "Reach")
         {
             inReach = false; // Mark the player as out of reach
         }

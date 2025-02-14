@@ -3,7 +3,22 @@ guid: d3b0f53079c954fe88728628c97b448f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hole
+    second: {fileID: 2100000, guid: 0961d7d5530f448779356c3c979c02b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SInk
+    second: {fileID: 2100000, guid: 0961d7d5530f448779356c3c979c02b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: c7155f8b6c0634e759b8525f1441ed43, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

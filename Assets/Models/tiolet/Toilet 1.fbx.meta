@@ -3,7 +3,12 @@ guid: 58d6581baf36d453dafcd8f118cc787a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet
+    second: {fileID: 2100000, guid: c6f89672d65264822b51590611a8a62a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
