@@ -45,7 +45,7 @@ public class SelfClean : MonoBehaviour
     void Update()
     {
         // If the player is in reach and presses the "Click" button
-        if (inReach && Input.GetKeyDown("Click"))
+        if (inReach && Input.GetButtonDown("Click"))
         {
             DoorOpens();
             NewFloor.SetActive(true);

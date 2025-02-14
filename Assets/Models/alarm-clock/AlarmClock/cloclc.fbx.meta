@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: antique_clock_1001
     second: {fileID: 2100000, guid: 01cda1e07bc4049e986c1d35e0c233a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: antique_clock_glass_1001
+    second: {fileID: 2100000, guid: 2f1bb98bfbb3441b0a1df145d320a1b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
