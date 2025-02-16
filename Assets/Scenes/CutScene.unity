@@ -20195,8 +20195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.092}
-  m_SizeDelta: {x: 300, y: 279.6594}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 330.65, y: 279.6594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118046766
 MonoBehaviour:
@@ -20233,21 +20233,18 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'To walk use "W ,A, S, D"
 
-    To Interact with a door, button use "CLICK"
-
-    To
-    Interact with anything else use "E"
+    To Interact with anything it the game use
+    "Left Click"
 
     To Drop use "G"
 
     To Quit use "Q"
 
+    To Pause use "ESC"
+
+
     To
-    Pause use "ESC"
-
-
-    To make it more convenient, I will re-system everything
-    later.
+    make it more convenient, I will re-system everything later.
 
     Enjoy.'
 --- !u!222 &1118046767
@@ -55272,7 +55269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -254}
+  m_AnchoredPosition: {x: 360, y: -149}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737326567
