@@ -3,7 +3,17 @@ guid: 6579899d05d5644339e7f75f28426327
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: easelAccMaterial
+    second: {fileID: 2100000, guid: 91b12b45b483c432f8b1e38e5242b5ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: easelMaterial
+    second: {fileID: 2100000, guid: 91b12b45b483c432f8b1e38e5242b5ae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
