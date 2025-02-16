@@ -9,7 +9,7 @@ public class DoorOpen : MonoBehaviour
     public AudioSource openSound;
     public AudioSource closeSound;
 
-    private bool isOpen = false; // Track door state
+    //private bool isOpen = false; // Track door state
     // Start is called before the first frame update
     void Start()
     {

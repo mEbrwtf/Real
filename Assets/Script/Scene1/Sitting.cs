@@ -36,7 +36,7 @@ public class Sitting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inReach && Input.GetButtonDown("USE"))
+        if (inReach && Input.GetButtonDown("Click"))
         {
             StartCoroutine(DelayedAction());
             SittingDown();
