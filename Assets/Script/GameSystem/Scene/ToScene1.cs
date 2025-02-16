@@ -21,6 +21,6 @@ public class ToScene1 : MonoBehaviour
     {
         fade.SetBool("Fade", true);
         yield return new WaitUntil(() => black.color.a == 1);
-        SceneManager.LoadScene("Scene 1");
+        SceneManager.LoadScene("Scene 11");
     }
 }

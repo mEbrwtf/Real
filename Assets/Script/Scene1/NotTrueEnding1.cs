@@ -40,7 +40,7 @@ public class NotTrueEnding1 : MonoBehaviour
     void Update()
     {
         // Only allow pickup if the item is in reach and has not been picked up yet
-        if (inReach && Input.GetButtonDown("USE"))
+        if (inReach && Input.GetButtonDown("Click"))
         {
             StopRingAndPickup();
         }
@@ -65,7 +65,7 @@ public class NotTrueEnding1 : MonoBehaviour
 
     private IEnumerator RingDuration()
     {
-        yield return new WaitForSeconds(14f);//14
+        yield return new WaitForSeconds(5f);//14
         ring.Play();
         pickup.enabled = true;
         yield return new WaitForSeconds(32f);
