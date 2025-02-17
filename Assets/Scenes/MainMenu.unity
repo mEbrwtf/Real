@@ -1955,7 +1955,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c17db485ab9a4c2fa6e789e8d86dde8, type: 3}
+    m_Font: {fileID: 12800000, guid: 0fb712cd2429d4357bf830c4308a5623, type: 3}
     m_FontSize: 19
     m_FontStyle: 0
     m_BestFit: 0
@@ -1967,8 +1967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.5
-  m_Text: '"This game is 90% done from 60% to 100%, so if it''s not good enough,
-    I''m working on it."'
+  m_Text: Thank you for playing. It's 99.99% done. There's still 0.1% left to develop.
 --- !u!222 &1588898088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2227,7 +2226,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LKDNUIOD
+  m_Text: Im not sure
 --- !u!222 &1740578495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2636,7 +2635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Touch glass
+  m_Text: Touch grass
 --- !u!222 &1990828825
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -934,7 +934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 339754454}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: OnLeaveButtonPressed
         m_Mode: 1
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 83fb859a748384b76990b012e730a601, type: 3}
+    m_Font: {fileID: 12800000, guid: 55e643e66b6a3499d8b6112c106fcdda, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
@@ -3163,7 +3163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &311914255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14293,7 +14293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 339754454}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -17942,7 +17942,7 @@ MonoBehaviour:
   audioSources:
   - {fileID: 550016527}
   subtitles:
-  - '"No no no, it is still development."'
+  - '"No no no, it is still development." '
   audioDelays:
   - 0
   triggerCollider: {fileID: 1539579337}

@@ -31,7 +31,7 @@ public class ClickEnter : MonoBehaviour
     void Update()
     {
         // Check if the player is in the zone and presses the activation key
-        if (isPlayerInZone && Input.GetKeyDown("USE"))
+        if (isPlayerInZone && Input.GetKeyDown("Click"))
         {
             if (activeTrigger != null && activeTrigger != this) // If there's an active trigger and it's not this one
             {
