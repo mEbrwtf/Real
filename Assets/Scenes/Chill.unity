@@ -4707,7 +4707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 564565789}
-  mouseSensitivity: 270
+  mouseSensitivity: 100
 --- !u!81 &413087920
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5861,7 +5861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 564565790}
   interactCount: -100
-  speed: 4
+  speed: 5
   gravity: -9.8
   jumpHeight: 0
   groundCheck: {fileID: 143674584}
@@ -9542,7 +9542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &682632942
 RectTransform:
   m_ObjectHideFlags: 0
