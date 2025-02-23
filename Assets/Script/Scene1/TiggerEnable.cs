@@ -27,15 +27,15 @@ public class TriggerAudioManager : MonoBehaviour
     // When the player enters the trigger zone
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Ensure the object is the player
+        if (other.CompareTag("Player"))
         {
-            if (activeTrigger != null && activeTrigger != this) // If there's an active trigger and it's not this one
+            if (activeTrigger != null && activeTrigger != this)
             {
-                activeTrigger.ResetAudioManager(); // Reset the previous trigger
+                activeTrigger.ResetAudioManager();
             }
 
-            activeTrigger = this; // Set this trigger as the active one
-            StartCoroutine(StartAudioWithDelay(initialDelay)); // Start the audio sequence with the initial delay
+            activeTrigger = this;
+            StartCoroutine(StartAudioWithDelay(initialDelay));
         }
     }
 

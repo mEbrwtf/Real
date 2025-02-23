@@ -14,7 +14,7 @@ public class ToScene6 : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Reach"))
         {
             StartCoroutine(Fading());
         }
